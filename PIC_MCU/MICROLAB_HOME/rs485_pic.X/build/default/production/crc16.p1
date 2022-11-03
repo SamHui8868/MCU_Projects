@@ -1,0 +1,702 @@
+Version 3.2 HI-TECH Software Intermediate Code
+[; ;stdint.h: 13: typedef signed char int8_t;
+[; ;stdint.h: 20: typedef signed int int16_t;
+[; ;stdint.h: 28: typedef __int24 int24_t;
+[; ;stdint.h: 36: typedef signed long int int32_t;
+[; ;stdint.h: 52: typedef unsigned char uint8_t;
+[; ;stdint.h: 58: typedef unsigned int uint16_t;
+[; ;stdint.h: 65: typedef __uint24 uint24_t;
+[; ;stdint.h: 72: typedef unsigned long int uint32_t;
+[; ;stdint.h: 88: typedef signed char int_least8_t;
+[; ;stdint.h: 96: typedef signed int int_least16_t;
+[; ;stdint.h: 109: typedef __int24 int_least24_t;
+[; ;stdint.h: 118: typedef signed long int int_least32_t;
+[; ;stdint.h: 136: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 143: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 154: typedef __uint24 uint_least24_t;
+[; ;stdint.h: 162: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 181: typedef signed char int_fast8_t;
+[; ;stdint.h: 188: typedef signed int int_fast16_t;
+[; ;stdint.h: 200: typedef __int24 int_fast24_t;
+[; ;stdint.h: 208: typedef signed long int int_fast32_t;
+[; ;stdint.h: 224: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 230: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 240: typedef __uint24 uint_fast24_t;
+[; ;stdint.h: 247: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 268: typedef int32_t intmax_t;
+[; ;stdint.h: 282: typedef uint32_t uintmax_t;
+[; ;stdint.h: 289: typedef int16_t intptr_t;
+[; ;stdint.h: 294: typedef uint16_t uintptr_t;
+[; ;crc16.h: 2: uint16_t crcGen(uint8_t *commandBuffer,uint8_t dataLen);
+"2 crc16.c
+[v _CRC_HI_TABLE `Cuc ~T0 @X0 -> 256 `i e ]
+[i _CRC_HI_TABLE
+:U ..
+"3
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+-> -> 64 `i `uc
+-> -> 1 `i `uc
+-> -> 192 `i `uc
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 1 `i `uc
+-> -> 192 `i `uc
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+"4
+-> -> 64 `i `uc
+-> -> 1 `i `uc
+-> -> 192 `i `uc
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+-> -> 64 `i `uc
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+-> -> 64 `i `uc
+-> -> 1 `i `uc
+-> -> 192 `i `uc
+"5
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 1 `i `uc
+-> -> 192 `i `uc
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+-> -> 64 `i `uc
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+-> -> 64 `i `uc
+-> -> 1 `i `uc
+"6
+-> -> 192 `i `uc
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+-> -> 64 `i `uc
+-> -> 1 `i `uc
+-> -> 192 `i `uc
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 1 `i `uc
+-> -> 192 `i `uc
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+"7
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+-> -> 64 `i `uc
+-> -> 1 `i `uc
+-> -> 192 `i `uc
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+-> -> 64 `i `uc
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+"8
+-> -> 64 `i `uc
+-> -> 1 `i `uc
+-> -> 192 `i `uc
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+-> -> 64 `i `uc
+-> -> 1 `i `uc
+-> -> 192 `i `uc
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 1 `i `uc
+-> -> 192 `i `uc
+"9
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+-> -> 64 `i `uc
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+-> -> 64 `i `uc
+-> -> 1 `i `uc
+-> -> 192 `i `uc
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 1 `i `uc
+"10
+-> -> 192 `i `uc
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+-> -> 64 `i `uc
+-> -> 1 `i `uc
+-> -> 192 `i `uc
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+-> -> 64 `i `uc
+"11
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+-> -> 64 `i `uc
+-> -> 1 `i `uc
+-> -> 192 `i `uc
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 1 `i `uc
+-> -> 192 `i `uc
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+"12
+-> -> 64 `i `uc
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+-> -> 64 `i `uc
+-> -> 1 `i `uc
+-> -> 192 `i `uc
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+-> -> 64 `i `uc
+-> -> 1 `i `uc
+-> -> 192 `i `uc
+"13
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 1 `i `uc
+-> -> 192 `i `uc
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+-> -> 64 `i `uc
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+-> -> 64 `i `uc
+-> -> 1 `i `uc
+"14
+-> -> 192 `i `uc
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 1 `i `uc
+-> -> 192 `i `uc
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+-> -> 64 `i `uc
+-> -> 1 `i `uc
+-> -> 192 `i `uc
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+"15
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+-> -> 64 `i `uc
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+-> -> 64 `i `uc
+-> -> 1 `i `uc
+-> -> 192 `i `uc
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+"16
+-> -> 64 `i `uc
+-> -> 1 `i `uc
+-> -> 192 `i `uc
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 1 `i `uc
+-> -> 192 `i `uc
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+-> -> 64 `i `uc
+-> -> 1 `i `uc
+-> -> 192 `i `uc
+"17
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+-> -> 64 `i `uc
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+-> -> 64 `i `uc
+-> -> 1 `i `uc
+-> -> 192 `i `uc
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 1 `i `uc
+"18
+-> -> 192 `i `uc
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+-> -> 64 `i `uc
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+-> -> 64 `i `uc
+-> -> 1 `i `uc
+-> -> 192 `i `uc
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+"19
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+-> -> 64 `i `uc
+-> -> 1 `i `uc
+-> -> 192 `i `uc
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 1 `i `uc
+-> -> 192 `i `uc
+-> -> 128 `i `uc
+-> -> 65 `i `uc
+-> -> 0 `i `uc
+-> -> 193 `i `uc
+-> -> 129 `i `uc
+"20
+-> -> 64 `i `uc
+..
+]
+[; ;crc16.c: 2: const uint8_t CRC_HI_TABLE[256] = {
+[; ;crc16.c: 3: 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81,
+[; ;crc16.c: 4: 0x40, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0,
+[; ;crc16.c: 5: 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x00, 0xC1, 0x81, 0x40, 0x01,
+[; ;crc16.c: 6: 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41,
+[; ;crc16.c: 7: 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x00, 0xC1, 0x81,
+[; ;crc16.c: 8: 0x40, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0,
+[; ;crc16.c: 9: 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01,
+[; ;crc16.c: 10: 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40,
+[; ;crc16.c: 11: 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81,
+[; ;crc16.c: 12: 0x40, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0,
+[; ;crc16.c: 13: 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x00, 0xC1, 0x81, 0x40, 0x01,
+[; ;crc16.c: 14: 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41,
+[; ;crc16.c: 15: 0x00, 0xC1, 0x81, 0x40, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81,
+[; ;crc16.c: 16: 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0,
+[; ;crc16.c: 17: 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01,
+[; ;crc16.c: 18: 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41,
+[; ;crc16.c: 19: 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81,
+[; ;crc16.c: 20: 0x40};
+"21
+[v _CRC_LO_TABLE `Cuc ~T0 @X0 -> 256 `i e ]
+[i _CRC_LO_TABLE
+:U ..
+"22
+-> -> 0 `i `uc
+-> -> 192 `i `uc
+-> -> 193 `i `uc
+-> -> 1 `i `uc
+-> -> 195 `i `uc
+-> -> 3 `i `uc
+-> -> 2 `i `uc
+-> -> 194 `i `uc
+-> -> 198 `i `uc
+-> -> 6 `i `uc
+-> -> 7 `i `uc
+-> -> 199 `i `uc
+-> -> 5 `i `uc
+-> -> 197 `i `uc
+-> -> 196 `i `uc
+"23
+-> -> 4 `i `uc
+-> -> 204 `i `uc
+-> -> 12 `i `uc
+-> -> 13 `i `uc
+-> -> 205 `i `uc
+-> -> 15 `i `uc
+-> -> 207 `i `uc
+-> -> 206 `i `uc
+-> -> 14 `i `uc
+-> -> 10 `i `uc
+-> -> 202 `i `uc
+-> -> 203 `i `uc
+-> -> 11 `i `uc
+-> -> 201 `i `uc
+-> -> 9 `i `uc
+"24
+-> -> 8 `i `uc
+-> -> 200 `i `uc
+-> -> 216 `i `uc
+-> -> 24 `i `uc
+-> -> 25 `i `uc
+-> -> 217 `i `uc
+-> -> 27 `i `uc
+-> -> 219 `i `uc
+-> -> 218 `i `uc
+-> -> 26 `i `uc
+-> -> 30 `i `uc
+-> -> 222 `i `uc
+-> -> 223 `i `uc
+-> -> 31 `i `uc
+-> -> 221 `i `uc
+"25
+-> -> 29 `i `uc
+-> -> 28 `i `uc
+-> -> 220 `i `uc
+-> -> 20 `i `uc
+-> -> 212 `i `uc
+-> -> 213 `i `uc
+-> -> 21 `i `uc
+-> -> 215 `i `uc
+-> -> 23 `i `uc
+-> -> 22 `i `uc
+-> -> 214 `i `uc
+-> -> 210 `i `uc
+-> -> 18 `i `uc
+-> -> 19 `i `uc
+-> -> 211 `i `uc
+"26
+-> -> 17 `i `uc
+-> -> 209 `i `uc
+-> -> 208 `i `uc
+-> -> 16 `i `uc
+-> -> 240 `i `uc
+-> -> 48 `i `uc
+-> -> 49 `i `uc
+-> -> 241 `i `uc
+-> -> 51 `i `uc
+-> -> 243 `i `uc
+-> -> 242 `i `uc
+-> -> 50 `i `uc
+-> -> 54 `i `uc
+-> -> 246 `i `uc
+-> -> 247 `i `uc
+"27
+-> -> 55 `i `uc
+-> -> 245 `i `uc
+-> -> 53 `i `uc
+-> -> 52 `i `uc
+-> -> 244 `i `uc
+-> -> 60 `i `uc
+-> -> 252 `i `uc
+-> -> 253 `i `uc
+-> -> 61 `i `uc
+-> -> 255 `i `uc
+-> -> 63 `i `uc
+-> -> 62 `i `uc
+-> -> 254 `i `uc
+-> -> 250 `i `uc
+-> -> 58 `i `uc
+"28
+-> -> 59 `i `uc
+-> -> 251 `i `uc
+-> -> 57 `i `uc
+-> -> 249 `i `uc
+-> -> 248 `i `uc
+-> -> 56 `i `uc
+-> -> 40 `i `uc
+-> -> 232 `i `uc
+-> -> 233 `i `uc
+-> -> 41 `i `uc
+-> -> 235 `i `uc
+-> -> 43 `i `uc
+-> -> 42 `i `uc
+-> -> 234 `i `uc
+-> -> 238 `i `uc
+"29
+-> -> 46 `i `uc
+-> -> 47 `i `uc
+-> -> 239 `i `uc
+-> -> 45 `i `uc
+-> -> 237 `i `uc
+-> -> 236 `i `uc
+-> -> 44 `i `uc
+-> -> 228 `i `uc
+-> -> 36 `i `uc
+-> -> 37 `i `uc
+-> -> 229 `i `uc
+-> -> 39 `i `uc
+-> -> 231 `i `uc
+-> -> 230 `i `uc
+-> -> 38 `i `uc
+"30
+-> -> 34 `i `uc
+-> -> 226 `i `uc
+-> -> 227 `i `uc
+-> -> 35 `i `uc
+-> -> 225 `i `uc
+-> -> 33 `i `uc
+-> -> 32 `i `uc
+-> -> 224 `i `uc
+-> -> 160 `i `uc
+-> -> 96 `i `uc
+-> -> 97 `i `uc
+-> -> 161 `i `uc
+-> -> 99 `i `uc
+-> -> 163 `i `uc
+-> -> 162 `i `uc
+"31
+-> -> 98 `i `uc
+-> -> 102 `i `uc
+-> -> 166 `i `uc
+-> -> 167 `i `uc
+-> -> 103 `i `uc
+-> -> 165 `i `uc
+-> -> 101 `i `uc
+-> -> 100 `i `uc
+-> -> 164 `i `uc
+-> -> 108 `i `uc
+-> -> 172 `i `uc
+-> -> 173 `i `uc
+-> -> 109 `i `uc
+-> -> 175 `i `uc
+-> -> 111 `i `uc
+"32
+-> -> 110 `i `uc
+-> -> 174 `i `uc
+-> -> 170 `i `uc
+-> -> 106 `i `uc
+-> -> 107 `i `uc
+-> -> 171 `i `uc
+-> -> 105 `i `uc
+-> -> 169 `i `uc
+-> -> 168 `i `uc
+-> -> 104 `i `uc
+-> -> 120 `i `uc
+-> -> 184 `i `uc
+-> -> 185 `i `uc
+-> -> 121 `i `uc
+-> -> 187 `i `uc
+"33
+-> -> 123 `i `uc
+-> -> 122 `i `uc
+-> -> 186 `i `uc
+-> -> 190 `i `uc
+-> -> 126 `i `uc
+-> -> 127 `i `uc
+-> -> 191 `i `uc
+-> -> 125 `i `uc
+-> -> 189 `i `uc
+-> -> 188 `i `uc
+-> -> 124 `i `uc
+-> -> 180 `i `uc
+-> -> 116 `i `uc
+-> -> 117 `i `uc
+-> -> 181 `i `uc
+"34
+-> -> 119 `i `uc
+-> -> 183 `i `uc
+-> -> 182 `i `uc
+-> -> 118 `i `uc
+-> -> 114 `i `uc
+-> -> 178 `i `uc
+-> -> 179 `i `uc
+-> -> 115 `i `uc
+-> -> 177 `i `uc
+-> -> 113 `i `uc
+-> -> 112 `i `uc
+-> -> 176 `i `uc
+-> -> 80 `i `uc
+-> -> 144 `i `uc
+-> -> 145 `i `uc
+"35
+-> -> 81 `i `uc
+-> -> 147 `i `uc
+-> -> 83 `i `uc
+-> -> 82 `i `uc
+-> -> 146 `i `uc
+-> -> 150 `i `uc
+-> -> 86 `i `uc
+-> -> 87 `i `uc
+-> -> 151 `i `uc
+-> -> 85 `i `uc
+-> -> 149 `i `uc
+-> -> 148 `i `uc
+-> -> 84 `i `uc
+-> -> 156 `i `uc
+-> -> 92 `i `uc
+"36
+-> -> 93 `i `uc
+-> -> 157 `i `uc
+-> -> 95 `i `uc
+-> -> 159 `i `uc
+-> -> 158 `i `uc
+-> -> 94 `i `uc
+-> -> 90 `i `uc
+-> -> 154 `i `uc
+-> -> 155 `i `uc
+-> -> 91 `i `uc
+-> -> 153 `i `uc
+-> -> 89 `i `uc
+-> -> 88 `i `uc
+-> -> 152 `i `uc
+-> -> 136 `i `uc
+"37
+-> -> 72 `i `uc
+-> -> 73 `i `uc
+-> -> 137 `i `uc
+-> -> 75 `i `uc
+-> -> 139 `i `uc
+-> -> 138 `i `uc
+-> -> 74 `i `uc
+-> -> 78 `i `uc
+-> -> 142 `i `uc
+-> -> 143 `i `uc
+-> -> 79 `i `uc
+-> -> 141 `i `uc
+-> -> 77 `i `uc
+-> -> 76 `i `uc
+-> -> 140 `i `uc
+"38
+-> -> 68 `i `uc
+-> -> 132 `i `uc
+-> -> 133 `i `uc
+-> -> 69 `i `uc
+-> -> 135 `i `uc
+-> -> 71 `i `uc
+-> -> 70 `i `uc
+-> -> 134 `i `uc
+-> -> 130 `i `uc
+-> -> 66 `i `uc
+-> -> 67 `i `uc
+-> -> 131 `i `uc
+-> -> 65 `i `uc
+-> -> 129 `i `uc
+-> -> 128 `i `uc
+"39
+-> -> 64 `i `uc
+..
+]
+[; ;crc16.c: 21: const uint8_t CRC_LO_TABLE[256] = {
+[; ;crc16.c: 22: 0x00, 0xC0, 0xC1, 0x01, 0xC3, 0x03, 0x02, 0xC2, 0xC6, 0x06, 0x07, 0xC7, 0x05, 0xC5, 0xC4,
+[; ;crc16.c: 23: 0x04, 0xCC, 0x0C, 0x0D, 0xCD, 0x0F, 0xCF, 0xCE, 0x0E, 0x0A, 0xCA, 0xCB, 0x0B, 0xC9, 0x09,
+[; ;crc16.c: 24: 0x08, 0xC8, 0xD8, 0x18, 0x19, 0xD9, 0x1B, 0xDB, 0xDA, 0x1A, 0x1E, 0xDE, 0xDF, 0x1F, 0xDD,
+[; ;crc16.c: 25: 0x1D, 0x1C, 0xDC, 0x14, 0xD4, 0xD5, 0x15, 0xD7, 0x17, 0x16, 0xD6, 0xD2, 0x12, 0x13, 0xD3,
+[; ;crc16.c: 26: 0x11, 0xD1, 0xD0, 0x10, 0xF0, 0x30, 0x31, 0xF1, 0x33, 0xF3, 0xF2, 0x32, 0x36, 0xF6, 0xF7,
+[; ;crc16.c: 27: 0x37, 0xF5, 0x35, 0x34, 0xF4, 0x3C, 0xFC, 0xFD, 0x3D, 0xFF, 0x3F, 0x3E, 0xFE, 0xFA, 0x3A,
+[; ;crc16.c: 28: 0x3B, 0xFB, 0x39, 0xF9, 0xF8, 0x38, 0x28, 0xE8, 0xE9, 0x29, 0xEB, 0x2B, 0x2A, 0xEA, 0xEE,
+[; ;crc16.c: 29: 0x2E, 0x2F, 0xEF, 0x2D, 0xED, 0xEC, 0x2C, 0xE4, 0x24, 0x25, 0xE5, 0x27, 0xE7, 0xE6, 0x26,
+[; ;crc16.c: 30: 0x22, 0xE2, 0xE3, 0x23, 0xE1, 0x21, 0x20, 0xE0, 0xA0, 0x60, 0x61, 0xA1, 0x63, 0xA3, 0xA2,
+[; ;crc16.c: 31: 0x62, 0x66, 0xA6, 0xA7, 0x67, 0xA5, 0x65, 0x64, 0xA4, 0x6C, 0xAC, 0xAD, 0x6D, 0xAF, 0x6F,
+[; ;crc16.c: 32: 0x6E, 0xAE, 0xAA, 0x6A, 0x6B, 0xAB, 0x69, 0xA9, 0xA8, 0x68, 0x78, 0xB8, 0xB9, 0x79, 0xBB,
+[; ;crc16.c: 33: 0x7B, 0x7A, 0xBA, 0xBE, 0x7E, 0x7F, 0xBF, 0x7D, 0xBD, 0xBC, 0x7C, 0xB4, 0x74, 0x75, 0xB5,
+[; ;crc16.c: 34: 0x77, 0xB7, 0xB6, 0x76, 0x72, 0xB2, 0xB3, 0x73, 0xB1, 0x71, 0x70, 0xB0, 0x50, 0x90, 0x91,
+[; ;crc16.c: 35: 0x51, 0x93, 0x53, 0x52, 0x92, 0x96, 0x56, 0x57, 0x97, 0x55, 0x95, 0x94, 0x54, 0x9C, 0x5C,
+[; ;crc16.c: 36: 0x5D, 0x9D, 0x5F, 0x9F, 0x9E, 0x5E, 0x5A, 0x9A, 0x9B, 0x5B, 0x99, 0x59, 0x58, 0x98, 0x88,
+[; ;crc16.c: 37: 0x48, 0x49, 0x89, 0x4B, 0x8B, 0x8A, 0x4A, 0x4E, 0x8E, 0x8F, 0x4F, 0x8D, 0x4D, 0x4C, 0x8C,
+[; ;crc16.c: 38: 0x44, 0x84, 0x85, 0x45, 0x87, 0x47, 0x46, 0x86, 0x82, 0x42, 0x43, 0x83, 0x41, 0x81, 0x80,
+[; ;crc16.c: 39: 0x40};
+"40
+[v _crcGen `(ui ~T0 @X0 1 ef2`*uc`uc ]
+"41
+{
+[; ;crc16.c: 40: uint16_t crcGen(uint8_t *commandBuffer,uint8_t dataLen)
+[; ;crc16.c: 41: {
+[e :U _crcGen ]
+"40
+[v _commandBuffer `*uc ~T0 @X0 1 r1 ]
+[v _dataLen `uc ~T0 @X0 1 r2 ]
+"41
+[f ]
+"43
+[s S2 `uc 1 `uc 1 ]
+[n S2 . L H ]
+"42
+[u S1 `S2 1 `ui 1 ]
+[n S1 . . value ]
+"48
+[v F42 `S1 ~T0 @X0 1 s crcReg ]
+"49
+[v _memPtr1 `*uc ~T0 @X0 1 a ]
+"50
+[v _index `i ~T0 @X0 1 a ]
+[v _k `i ~T0 @X0 1 a ]
+[; ;crc16.c: 42: static union {
+[; ;crc16.c: 43: struct{
+[; ;crc16.c: 44: uint8_t L;
+[; ;crc16.c: 45: uint8_t H;
+[; ;crc16.c: 46: };
+[; ;crc16.c: 47: uint16_t value;
+[; ;crc16.c: 48: } crcReg;
+[; ;crc16.c: 49: uint8_t *memPtr1;
+[; ;crc16.c: 50: int index,k;
+[; ;crc16.c: 52: k=dataLen;
+"52
+[e = _k -> _dataLen `i ]
+[; ;crc16.c: 53: crcReg.value = 0xFFFF;
+"53
+[e = . F42 1 -> 65535 `ui ]
+[; ;crc16.c: 54: memPtr1 = commandBuffer;
+"54
+[e = _memPtr1 _commandBuffer ]
+[; ;crc16.c: 55: while(dataLen--)
+"55
+[e $U 4  ]
+[e :U 5 ]
+[; ;crc16.c: 56: {
+"56
+{
+[; ;crc16.c: 57: index = *(memPtr1++) ^ crcReg.L;
+"57
+[e = _index ^ -> *U ++ _memPtr1 * -> -> 1 `i `x -> -> # *U _memPtr1 `i `x `i -> . . F42 0 0 `i ]
+[; ;crc16.c: 58: crcReg.L = CRC_HI_TABLE[index] ^ crcReg.H;
+"58
+[e = . . F42 0 0 -> ^ -> *U + &U _CRC_HI_TABLE * -> -> _index `ui `ux -> -> # *U &U _CRC_HI_TABLE `ui `ux `i -> . . F42 0 1 `i `uc ]
+[; ;crc16.c: 59: crcReg.H = CRC_LO_TABLE[index];
+"59
+[e = . . F42 0 1 *U + &U _CRC_LO_TABLE * -> -> _index `ui `ux -> -> # *U &U _CRC_LO_TABLE `ui `ux ]
+"60
+}
+[e :U 4 ]
+"55
+[e $ != -> -- _dataLen -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 5  ]
+[e :U 6 ]
+[; ;crc16.c: 60: }
+[; ;crc16.c: 61: return crcReg.value;
+"61
+[e ) . F42 1 ]
+[e $UE 3  ]
+[; ;crc16.c: 62: }
+"62
+[e :UE 3 ]
+}

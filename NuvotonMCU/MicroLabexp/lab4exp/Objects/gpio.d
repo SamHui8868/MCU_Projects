@@ -1,0 +1,33 @@
+.\objects\gpio.o: gpio.c
+.\objects\gpio.o: .\Header files\M451Series.h
+.\objects\gpio.o: .\Header files\core_cm4.h
+.\objects\gpio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\gpio.o: .\Header files\core_cmInstr.h
+.\objects\gpio.o: .\Header files\core_cmFunc.h
+.\objects\gpio.o: .\Header files\core_cm4_simd.h
+.\objects\gpio.o: .\Header files\system_M451Series.h
+.\objects\gpio.o: .\Header files\sys.h
+.\objects\gpio.o: .\Header files\clk.h
+.\objects\gpio.o: .\Header files\gpio.h
+.\objects\gpio.o: .\Header files\i2c.h
+.\objects\gpio.o: .\Header files\M451Series.h
+.\objects\gpio.o: .\Header files\crc.h
+.\objects\gpio.o: .\Header files\ebi.h
+.\objects\gpio.o: .\Header files\rtc.h
+.\objects\gpio.o: .\Header files\timer.h
+.\objects\gpio.o: .\Header files\wdt.h
+.\objects\gpio.o: .\Header files\wwdt.h
+.\objects\gpio.o: .\Header files\spi.h
+.\objects\gpio.o: .\Header files\sc.h
+.\objects\gpio.o: .\Header files\scuart.h
+.\objects\gpio.o: .\Header files\acmp.h
+.\objects\gpio.o: .\Header files\eadc.h
+.\objects\gpio.o: .\Header files\dac.h
+.\objects\gpio.o: .\Header files\can.h
+.\objects\gpio.o: .\Header files\usbd.h
+.\objects\gpio.o: .\Header files\fmc.h
+.\objects\gpio.o: .\Header files\uart.h
+.\objects\gpio.o: .\Header files\pwm.h
+.\objects\gpio.o: .\Header files\pdma.h
+.\objects\gpio.o: .\Header files\tk.h
+.\objects\gpio.o: .\Header files\otg.h

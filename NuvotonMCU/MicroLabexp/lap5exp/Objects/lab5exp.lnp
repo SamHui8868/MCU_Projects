@@ -1,0 +1,14 @@
+--cpu=Cortex-M4.fp.sp
+".\objects\main.o"
+".\objects\adcagent.o"
+".\objects\buttonagent.o"
+".\objects\gpio.o"
+".\objects\sevensegmentagent.o"
+".\objects\stepmotoragent.o"
+".\objects\timebaseagent.o"
+".\objects\system_m451series.o"
+".\objects\startup_m451series.o"
+--ro-base 0x00000000 --entry 0x00000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict
+--libpath=C:\Keil_v5\ARM\ARMCC\lib --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\lab5exp.map" -o .\Objects\lab5exp.axf

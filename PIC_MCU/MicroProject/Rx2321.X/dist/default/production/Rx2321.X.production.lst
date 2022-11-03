@@ -1,0 +1,1738 @@
+
+
+Microchip MPLAB XC8 Assembler V2.05 build -831301201 
+                                                                                               Tue Apr 14 15:56:36 2020
+
+Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og9 
+     1                           	processor	18F23K22
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	flic
+     5                           	psect	nvCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+     6                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     7                           	psect	bssCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+     8                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1,noexec
+     9                           	psect	text0,global,reloc=2,class=CODE,delta=1
+    10                           	psect	text1,global,reloc=2,class=CODE,delta=1
+    11                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    13                           	psect	text4,global,reloc=2,class=CODE,delta=1
+    14                           	psect	text5,global,reloc=2,class=CODE,delta=1
+    15                           	psect	text6,global,reloc=2,class=CODE,delta=1
+    16                           	psect	text7,global,reloc=2,class=CODE,delta=1
+    17                           	psect	text8,global,reloc=2,class=CODE,delta=1
+    18                           	psect	text9,global,reloc=2,class=CODE,delta=1
+    19                           	psect	text10,global,reloc=2,class=CODE,delta=1
+    20                           	psect	text11,global,reloc=2,class=CODE,delta=1
+    21                           	psect	text12,global,reloc=2,class=CODE,delta=1
+    22                           	psect	text13,global,reloc=2,class=CODE,delta=1
+    23                           	psect	text14,global,reloc=2,class=CODE,delta=1
+    24                           	psect	intcode,global,reloc=2,class=CODE,delta=1
+    25                           	psect	text16,global,reloc=2,class=CODE,delta=1
+    26                           	psect	text17,global,reloc=2,class=CODE,delta=1
+    27                           	psect	text18,global,reloc=2,class=CODE,delta=1
+    28                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    29                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    30                           	psect	temp,global,ovrld,common,class=COMRAM,space=1,delta=1
+    31  0000                     
+    32                           ; Version 2.05
+    33                           ; Generated 20/12/2018 GMT
+    34                           ; 
+    35                           ; Copyright © 2018, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    36                           ; All rights reserved.
+    37                           ; 
+    38                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    39                           ; 
+    40                           ; Redistribution and use in source and binary forms, with or without modification, are
+    41                           ; permitted provided that the following conditions are met:
+    42                           ; 
+    43                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    44                           ;        conditions and the following disclaimer.
+    45                           ; 
+    46                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    47                           ;        of conditions and the following disclaimer in the documentation and/or other
+    48                           ;        materials provided with the distribution.
+    49                           ; 
+    50                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    51                           ;        software without specific prior written permission.
+    52                           ; 
+    53                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    54                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    55                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    56                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    57                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    58                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    59                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    60                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    61                           ; 
+    62                           ; 
+    63                           ; Code-generator required, PIC18F23K22 Definitions
+    64                           ; 
+    65                           ; SFR Addresses
+    66  0000                     
+    67                           	psect	nvCOMRAM
+    68  000054                     __pnvCOMRAM:
+    69                           	opt callstack 0
+    70  000054                     _eusart1TxBufferRemaining:
+    71                           	opt callstack 0
+    72  000054                     	ds	1
+    73  0000                     _ANSELA	set	3896
+    74  0000                     _ANSELB	set	3897
+    75  0000                     _ANSELC	set	3898
+    76  0000                     _INTCON2bits	set	4081
+    77  0000                     _WPUB	set	3937
+    78  0000                     _TRISC	set	3988
+    79  0000                     _TRISB	set	3987
+    80  0000                     _TRISA	set	3986
+    81  0000                     _LATC	set	3979
+    82  0000                     _LATB	set	3978
+    83  0000                     _LATA	set	3977
+    84  0000                     _OSCTUNE	set	3995
+    85  0000                     _OSCCON2	set	4050
+    86  0000                     _OSCCON	set	4051
+    87  0000                     _PIR1bits	set	3998
+    88  0000                     _INTCONbits	set	4082
+    89  0000                     _RCONbits	set	4048
+    90  0000                     _RCREG1	set	4014
+    91  0000                     _RCSTA1bits	set	4011
+    92  0000                     _TXREG1	set	4013
+    93  0000                     _SPBRGH1	set	4016
+    94  0000                     _SPBRG1	set	4015
+    95  0000                     _TXSTA1	set	4012
+    96  0000                     _RCSTA1	set	4011
+    97  0000                     _BAUDCON1	set	4024
+    98  0000                     _PIE1bits	set	3997
+    99                           
+   100                           ; #config settings
+   101  0000                     
+   102                           	psect	cinit
+   103  0000E6                     __pcinit:
+   104                           	opt callstack 0
+   105  0000E6                     start_initialization:
+   106                           	opt callstack 0
+   107  0000E6                     __initialization:
+   108                           	opt callstack 0
+   109                           
+   110                           ; Clear objects allocated to COMRAM (76 bytes)
+   111  0000E6  EE00  F001         	lfsr	0,__pbssCOMRAM
+   112  0000EA  0E4C               	movlw	76
+   113  0000EC                     clear_0:
+   114  0000EC  6AEE               	clrf	postinc0,c
+   115  0000EE  06E8               	decf	wreg,f,c
+   116  0000F0  E1FD               	bnz	clear_0
+   117  0000F2                     end_of_initialization:
+   118                           	opt callstack 0
+   119  0000F2                     __end_of__initialization:
+   120                           	opt callstack 0
+   121  0000F2  9055               	bcf	int$flags,0,c	;clear compiler interrupt flag (level 1)
+   122  0000F4  9255               	bcf	int$flags,1,c	;clear compiler interrupt flag (level 2)
+   123  0000F6  0E00               	movlw	low (__Lmediumconst shr (0+16))
+   124  0000F8  6EF8               	movwf	tblptru,c
+   125  0000FA  0100               	movlb	0
+   126  0000FC  EF38  F000         	goto	_main	;jump to C main() function
+   127                           
+   128                           	psect	bssCOMRAM
+   129  000001                     __pbssCOMRAM:
+   130                           	opt callstack 0
+   131  000001                     _Tx_CQ:
+   132                           	opt callstack 0
+   133  000001                     	ds	16
+   134  000011                     _Rx_CQ:
+   135                           	opt callstack 0
+   136  000011                     	ds	16
+   137  000021                     _eusart1RxStatusBuffer:
+   138                           	opt callstack 0
+   139  000021                     	ds	8
+   140  000029                     _eusart1RxBuffer:
+   141                           	opt callstack 0
+   142  000029                     	ds	8
+   143  000031                     _eusart1TxBuffer:
+   144                           	opt callstack 0
+   145  000031                     	ds	8
+   146  000039                     _EUSART1_ErrorHandler:
+   147                           	opt callstack 0
+   148  000039                     	ds	2
+   149  00003B                     _EUSART1_OverrunErrorHandler:
+   150                           	opt callstack 0
+   151  00003B                     	ds	2
+   152  00003D                     _EUSART1_FramingErrorHandler:
+   153                           	opt callstack 0
+   154  00003D                     	ds	2
+   155  00003F                     _EUSART1_RxDefaultInterruptHandler:
+   156                           	opt callstack 0
+   157  00003F                     	ds	2
+   158  000041                     _EUSART1_TxDefaultInterruptHandler:
+   159                           	opt callstack 0
+   160  000041                     	ds	2
+   161  000043                     _Tx_Tail:
+   162                           	opt callstack 0
+   163  000043                     	ds	1
+   164  000044                     _Rx_Tail:
+   165                           	opt callstack 0
+   166  000044                     	ds	1
+   167  000045                     _Tx_Head:
+   168                           	opt callstack 0
+   169  000045                     	ds	1
+   170  000046                     _Rx_Head:
+   171                           	opt callstack 0
+   172  000046                     	ds	1
+   173  000047                     _eusart1RxLastError:
+   174                           	opt callstack 0
+   175  000047                     	ds	1
+   176  000048                     _eusart1RxCount:
+   177                           	opt callstack 0
+   178  000048                     	ds	1
+   179  000049                     _eusart1RxTail:
+   180                           	opt callstack 0
+   181  000049                     	ds	1
+   182  00004A                     _eusart1RxHead:
+   183                           	opt callstack 0
+   184  00004A                     	ds	1
+   185  00004B                     _eusart1TxTail:
+   186                           	opt callstack 0
+   187  00004B                     	ds	1
+   188  00004C                     _eusart1TxHead:
+   189                           	opt callstack 0
+   190  00004C                     	ds	1
+   191                           
+   192                           	psect	cstackCOMRAM
+   193  00004D                     __pcstackCOMRAM:
+   194                           	opt callstack 0
+   195  00004D                     Rx_enQ@data:
+   196                           	opt callstack 0
+   197                           
+   198                           ; 1 bytes @ 0x0
+   199  00004D                     	ds	1
+   200  00004E                     EUSART1_Receive_ISR@c:
+   201                           	opt callstack 0
+   202                           
+   203                           ; 1 bytes @ 0x1
+   204  00004E                     	ds	1
+   205  00004F                     ??_INTERRUPT_InterruptManager:
+   206                           
+   207                           ; 1 bytes @ 0x2
+   208  00004F                     	ds	2
+   209  000051                     Rx_deQ@data:
+   210                           	opt callstack 0
+   211  000051                     Tx_deQ@data:
+   212                           	opt callstack 0
+   213  000051                     Tx_enQ@data:
+   214                           	opt callstack 0
+   215                           
+   216                           ; 1 bytes @ 0x4
+   217  000051                     	ds	1
+   218  000052                     EUSART1_Write@txData:
+   219                           	opt callstack 0
+   220                           
+   221                           ; 1 bytes @ 0x5
+   222  000052                     	ds	1
+   223  000053                     main@data:
+   224                           	opt callstack 0
+   225                           
+   226                           ; 1 bytes @ 0x6
+   227  000053                     	ds	1
+   228                           
+   229 ;;
+   230 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   231 ;;
+   232 ;; *************** function _main *****************
+   233 ;; Defined at:
+   234 ;;		line 49 in file "main.c"
+   235 ;; Parameters:    Size  Location     Type
+   236 ;;		None
+   237 ;; Auto vars:     Size  Location     Type
+   238 ;;  data            1    6[COMRAM] unsigned char 
+   239 ;; Return value:  Size  Location     Type
+   240 ;;                  1    wreg      void 
+   241 ;; Registers used:
+   242 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+   243 ;; Tracked objects:
+   244 ;;		On entry : 0/0
+   245 ;;		On exit  : 0/0
+   246 ;;		Unchanged: 0/0
+   247 ;; Data sizes:     COMRAM   BANK0   BANK1
+   248 ;;      Params:         0       0       0
+   249 ;;      Locals:         1       0       0
+   250 ;;      Temps:          0       0       0
+   251 ;;      Totals:         1       0       0
+   252 ;;Total ram usage:        1 bytes
+   253 ;; Hardware stack levels required when called:    5
+   254 ;; This function calls:
+   255 ;;		_EUSART1_Read
+   256 ;;		_EUSART1_Write
+   257 ;;		_EUSART1_Write_task
+   258 ;;		_Rx_isEmpty
+   259 ;;		_SYSTEM_Initialize
+   260 ;;		_Tx_isFull
+   261 ;; This function is called by:
+   262 ;;		Startup code after reset
+   263 ;; This function uses a non-reentrant model
+   264 ;;
+   265                           
+   266                           	psect	text0
+   267  000070                     __ptext0:
+   268                           	opt callstack 0
+   269  000070                     _main:
+   270                           	opt callstack 26
+   271                           
+   272                           ;main.c: 52: SYSTEM_Initialize();
+   273                           
+   274                           ;incstack = 0
+   275  000070  ECB5  F000         	call	_SYSTEM_Initialize	;wreg free
+   276                           
+   277                           ; BSR set to: 15
+   278                           ;main.c: 59: (INTCONbits.GIE = 1);
+   279  000074  8EF2               	bsf	4082,7,c	;volatile
+   280                           
+   281                           ; BSR set to: 15
+   282                           ;main.c: 65: (INTCONbits.PEIE = 1);
+   283  000076  8CF2               	bsf	4082,6,c	;volatile
+   284  000078                     l1117:
+   285                           
+   286                           ;main.c: 71: {;main.c: 72: if(!Rx_isEmpty()&&!Tx_isFull()){
+   287  000078  ECD0  F000         	call	_Rx_isEmpty	;wreg free
+   288  00007C  0900               	iorlw	0
+   289  00007E  A4D8               	btfss	status,2,c
+   290  000080  D00B               	goto	l256
+   291  000082  ECAC  F000         	call	_Tx_isFull	;wreg free
+   292  000086  0900               	iorlw	0
+   293  000088  A4D8               	btfss	status,2,c
+   294  00008A  D006               	goto	l256
+   295                           
+   296                           ;main.c: 74: data = EUSART1_Read();
+   297  00008C  ECEC  F000         	call	_EUSART1_Read	;wreg free
+   298  000090  6E53               	movwf	main@data,c
+   299                           
+   300                           ;main.c: 75: EUSART1_Write(data);
+   301  000092  5053               	movf	main@data,w,c
+   302  000094  ECE7  F000         	call	_EUSART1_Write
+   303  000098                     l256:
+   304                           
+   305                           ;main.c: 76: };main.c: 77: EUSART1_Write_task();
+   306  000098  ECBE  F000         	call	_EUSART1_Write_task	;wreg free
+   307  00009C  D7ED               	goto	l1117
+   308  00009E                     __end_of_main:
+   309                           	opt callstack 0
+   310                           
+   311 ;; *************** function _Tx_isFull *****************
+   312 ;; Defined at:
+   313 ;;		line 334 in file "mcc_generated_files/eusart1.c"
+   314 ;; Parameters:    Size  Location     Type
+   315 ;;		None
+   316 ;; Auto vars:     Size  Location     Type
+   317 ;;		None
+   318 ;; Return value:  Size  Location     Type
+   319 ;;                  1    wreg      unsigned char 
+   320 ;; Registers used:
+   321 ;;		wreg, status,2, status,0
+   322 ;; Tracked objects:
+   323 ;;		On entry : 0/0
+   324 ;;		On exit  : 0/0
+   325 ;;		Unchanged: 0/0
+   326 ;; Data sizes:     COMRAM   BANK0   BANK1
+   327 ;;      Params:         0       0       0
+   328 ;;      Locals:         0       0       0
+   329 ;;      Temps:          0       0       0
+   330 ;;      Totals:         0       0       0
+   331 ;;Total ram usage:        0 bytes
+   332 ;; Hardware stack levels used:    1
+   333 ;; Hardware stack levels required when called:    3
+   334 ;; This function calls:
+   335 ;;		Nothing
+   336 ;; This function is called by:
+   337 ;;		_main
+   338 ;; This function uses a non-reentrant model
+   339 ;;
+   340                           
+   341                           	psect	text1
+   342  000158                     __ptext1:
+   343                           	opt callstack 0
+   344  000158                     _Tx_isFull:
+   345                           	opt callstack 27
+   346                           
+   347                           ;eusart1.c: 336: return ((Tx_Head+1)&0x0F)==Tx_Tail;
+   348                           
+   349                           ;incstack = 0
+   350  000158  2845               	incf	_Tx_Head,w,c
+   351  00015A  0B0F               	andlw	15
+   352  00015C  1843               	xorwf	_Tx_Tail,w,c
+   353  00015E  A4D8               	btfss	status,2,c
+   354  000160  D002               	goto	u100
+   355  000162  0E01               	movlw	1
+   356  000164  0012               	return	
+   357  000166                     u100:
+   358  000166  0E00               	movlw	0
+   359  000168  0012               	return		;funcret
+   360  00016A                     __end_of_Tx_isFull:
+   361                           	opt callstack 0
+   362                           
+   363 ;; *************** function _SYSTEM_Initialize *****************
+   364 ;; Defined at:
+   365 ;;		line 50 in file "mcc_generated_files/mcc.c"
+   366 ;; Parameters:    Size  Location     Type
+   367 ;;		None
+   368 ;; Auto vars:     Size  Location     Type
+   369 ;;		None
+   370 ;; Return value:  Size  Location     Type
+   371 ;;                  1    wreg      void 
+   372 ;; Registers used:
+   373 ;;		wreg, status,2, cstack
+   374 ;; Tracked objects:
+   375 ;;		On entry : 0/0
+   376 ;;		On exit  : 3F/F
+   377 ;;		Unchanged: 0/0
+   378 ;; Data sizes:     COMRAM   BANK0   BANK1
+   379 ;;      Params:         0       0       0
+   380 ;;      Locals:         0       0       0
+   381 ;;      Temps:          0       0       0
+   382 ;;      Totals:         0       0       0
+   383 ;;Total ram usage:        0 bytes
+   384 ;; Hardware stack levels used:    1
+   385 ;; Hardware stack levels required when called:    4
+   386 ;; This function calls:
+   387 ;;		_EUSART1_Initialize
+   388 ;;		_INTERRUPT_Initialize
+   389 ;;		_OSCILLATOR_Initialize
+   390 ;;		_PIN_MANAGER_Initialize
+   391 ;; This function is called by:
+   392 ;;		_main
+   393 ;; This function uses a non-reentrant model
+   394 ;;
+   395                           
+   396                           	psect	text2
+   397  00016A                     __ptext2:
+   398                           	opt callstack 0
+   399  00016A                     _SYSTEM_Initialize:
+   400                           	opt callstack 26
+   401                           
+   402                           ;mcc.c: 53: INTERRUPT_Initialize();
+   403                           
+   404                           ;incstack = 0
+   405  00016A  ECEF  F000         	call	_INTERRUPT_Initialize	;wreg free
+   406                           
+   407                           ;mcc.c: 54: PIN_MANAGER_Initialize();
+   408  00016E  EC4F  F000         	call	_PIN_MANAGER_Initialize	;wreg free
+   409                           
+   410                           ; BSR set to: 15
+   411                           ;mcc.c: 55: OSCILLATOR_Initialize();
+   412  000172  ECE0  F000         	call	_OSCILLATOR_Initialize	;wreg free
+   413                           
+   414                           ; BSR set to: 15
+   415                           ;mcc.c: 56: EUSART1_Initialize();
+   416  000176  EC1C  F000         	call	_EUSART1_Initialize	;wreg free
+   417                           
+   418                           ; BSR set to: 15
+   419  00017A  0012               	return		;funcret
+   420  00017C                     __end_of_SYSTEM_Initialize:
+   421                           	opt callstack 0
+   422                           
+   423 ;; *************** function _PIN_MANAGER_Initialize *****************
+   424 ;; Defined at:
+   425 ;;		line 55 in file "mcc_generated_files/pin_manager.c"
+   426 ;; Parameters:    Size  Location     Type
+   427 ;;		None
+   428 ;; Auto vars:     Size  Location     Type
+   429 ;;		None
+   430 ;; Return value:  Size  Location     Type
+   431 ;;                  1    wreg      void 
+   432 ;; Registers used:
+   433 ;;		wreg, status,2
+   434 ;; Tracked objects:
+   435 ;;		On entry : 0/0
+   436 ;;		On exit  : 3F/F
+   437 ;;		Unchanged: 0/0
+   438 ;; Data sizes:     COMRAM   BANK0   BANK1
+   439 ;;      Params:         0       0       0
+   440 ;;      Locals:         0       0       0
+   441 ;;      Temps:          0       0       0
+   442 ;;      Totals:         0       0       0
+   443 ;;Total ram usage:        0 bytes
+   444 ;; Hardware stack levels used:    1
+   445 ;; Hardware stack levels required when called:    3
+   446 ;; This function calls:
+   447 ;;		Nothing
+   448 ;; This function is called by:
+   449 ;;		_SYSTEM_Initialize
+   450 ;; This function uses a non-reentrant model
+   451 ;;
+   452                           
+   453                           	psect	text3
+   454  00009E                     __ptext3:
+   455                           	opt callstack 0
+   456  00009E                     _PIN_MANAGER_Initialize:
+   457                           	opt callstack 26
+   458                           
+   459                           ;pin_manager.c: 60: LATA = 0x00;
+   460                           
+   461                           ; BSR set to: 15
+   462                           ;incstack = 0
+   463  00009E  0E00               	movlw	0
+   464  0000A0  6E89               	movwf	3977,c	;volatile
+   465                           
+   466                           ;pin_manager.c: 61: LATB = 0x00;
+   467  0000A2  0E00               	movlw	0
+   468  0000A4  6E8A               	movwf	3978,c	;volatile
+   469                           
+   470                           ;pin_manager.c: 62: LATC = 0x00;
+   471  0000A6  0E00               	movlw	0
+   472  0000A8  6E8B               	movwf	3979,c	;volatile
+   473                           
+   474                           ;pin_manager.c: 67: TRISA = 0xFF;
+   475  0000AA  6892               	setf	3986,c	;volatile
+   476                           
+   477                           ;pin_manager.c: 68: TRISB = 0xFF;
+   478  0000AC  6893               	setf	3987,c	;volatile
+   479                           
+   480                           ;pin_manager.c: 69: TRISC = 0xBF;
+   481  0000AE  0EBF               	movlw	191
+   482  0000B0  6E94               	movwf	3988,c	;volatile
+   483                           
+   484                           ;pin_manager.c: 74: ANSELC = 0x3C;
+   485  0000B2  0E3C               	movlw	60
+   486  0000B4  010F               	movlb	15	; () banked
+   487  0000B6  6F3A               	movwf	58,b	;volatile
+   488                           
+   489                           ;pin_manager.c: 75: ANSELB = 0x3F;
+   490  0000B8  0E3F               	movlw	63
+   491  0000BA  6F39               	movwf	57,b	;volatile
+   492                           
+   493                           ;pin_manager.c: 76: ANSELA = 0x2F;
+   494  0000BC  0E2F               	movlw	47
+   495  0000BE  6F38               	movwf	56,b	;volatile
+   496                           
+   497                           ;pin_manager.c: 81: WPUB = 0x00;
+   498  0000C0  0E00               	movlw	0
+   499  0000C2  6E61               	movwf	3937,c	;volatile
+   500                           
+   501                           ; BSR set to: 15
+   502                           ;pin_manager.c: 82: INTCON2bits.nRBPU = 1;
+   503  0000C4  8EF1               	bsf	4081,7,c	;volatile
+   504                           
+   505                           ; BSR set to: 15
+   506  0000C6  0012               	return		;funcret
+   507  0000C8                     __end_of_PIN_MANAGER_Initialize:
+   508                           	opt callstack 0
+   509                           
+   510 ;; *************** function _OSCILLATOR_Initialize *****************
+   511 ;; Defined at:
+   512 ;;		line 59 in file "mcc_generated_files/mcc.c"
+   513 ;; Parameters:    Size  Location     Type
+   514 ;;		None
+   515 ;; Auto vars:     Size  Location     Type
+   516 ;;		None
+   517 ;; Return value:  Size  Location     Type
+   518 ;;                  1    wreg      void 
+   519 ;; Registers used:
+   520 ;;		wreg, status,2
+   521 ;; Tracked objects:
+   522 ;;		On entry : 3F/F
+   523 ;;		On exit  : 3F/F
+   524 ;;		Unchanged: 3E/0
+   525 ;; Data sizes:     COMRAM   BANK0   BANK1
+   526 ;;      Params:         0       0       0
+   527 ;;      Locals:         0       0       0
+   528 ;;      Temps:          0       0       0
+   529 ;;      Totals:         0       0       0
+   530 ;;Total ram usage:        0 bytes
+   531 ;; Hardware stack levels used:    1
+   532 ;; Hardware stack levels required when called:    3
+   533 ;; This function calls:
+   534 ;;		Nothing
+   535 ;; This function is called by:
+   536 ;;		_SYSTEM_Initialize
+   537 ;; This function uses a non-reentrant model
+   538 ;;
+   539                           
+   540                           	psect	text4
+   541  0001C0                     __ptext4:
+   542                           	opt callstack 0
+   543  0001C0                     _OSCILLATOR_Initialize:
+   544                           	opt callstack 26
+   545                           
+   546                           ; BSR set to: 15
+   547                           ;mcc.c: 62: OSCCON = 0x30;
+   548                           
+   549                           ; BSR set to: 15
+   550                           ;incstack = 0
+   551  0001C0  0E30               	movlw	48
+   552  0001C2  6ED3               	movwf	4051,c	;volatile
+   553                           
+   554                           ;mcc.c: 64: OSCCON2 = 0x04;
+   555  0001C4  0E04               	movlw	4
+   556  0001C6  6ED2               	movwf	4050,c	;volatile
+   557                           
+   558                           ;mcc.c: 66: OSCTUNE = 0x00;
+   559  0001C8  0E00               	movlw	0
+   560  0001CA  6E9B               	movwf	3995,c	;volatile
+   561                           
+   562                           ; BSR set to: 15
+   563  0001CC  0012               	return		;funcret
+   564  0001CE                     __end_of_OSCILLATOR_Initialize:
+   565                           	opt callstack 0
+   566                           
+   567 ;; *************** function _INTERRUPT_Initialize *****************
+   568 ;; Defined at:
+   569 ;;		line 52 in file "mcc_generated_files/interrupt_manager.c"
+   570 ;; Parameters:    Size  Location     Type
+   571 ;;		None
+   572 ;; Auto vars:     Size  Location     Type
+   573 ;;		None
+   574 ;; Return value:  Size  Location     Type
+   575 ;;                  1    wreg      void 
+   576 ;; Registers used:
+   577 ;;		None
+   578 ;; Tracked objects:
+   579 ;;		On entry : 0/0
+   580 ;;		On exit  : 0/0
+   581 ;;		Unchanged: 0/0
+   582 ;; Data sizes:     COMRAM   BANK0   BANK1
+   583 ;;      Params:         0       0       0
+   584 ;;      Locals:         0       0       0
+   585 ;;      Temps:          0       0       0
+   586 ;;      Totals:         0       0       0
+   587 ;;Total ram usage:        0 bytes
+   588 ;; Hardware stack levels used:    1
+   589 ;; Hardware stack levels required when called:    3
+   590 ;; This function calls:
+   591 ;;		Nothing
+   592 ;; This function is called by:
+   593 ;;		_SYSTEM_Initialize
+   594 ;; This function uses a non-reentrant model
+   595 ;;
+   596                           
+   597                           	psect	text5
+   598  0001DE                     __ptext5:
+   599                           	opt callstack 0
+   600  0001DE                     _INTERRUPT_Initialize:
+   601                           	opt callstack 26
+   602                           
+   603                           ;interrupt_manager.c: 55: RCONbits.IPEN = 0;
+   604                           
+   605                           ; BSR set to: 15
+   606                           ;incstack = 0
+   607  0001DE  9ED0               	bcf	4048,7,c	;volatile
+   608  0001E0  0012               	return		;funcret
+   609  0001E2                     __end_of_INTERRUPT_Initialize:
+   610                           	opt callstack 0
+   611                           
+   612 ;; *************** function _EUSART1_Initialize *****************
+   613 ;; Defined at:
+   614 ;;		line 94 in file "mcc_generated_files/eusart1.c"
+   615 ;; Parameters:    Size  Location     Type
+   616 ;;		None
+   617 ;; Auto vars:     Size  Location     Type
+   618 ;;		None
+   619 ;; Return value:  Size  Location     Type
+   620 ;;                  1    wreg      void 
+   621 ;; Registers used:
+   622 ;;		wreg, status,2
+   623 ;; Tracked objects:
+   624 ;;		On entry : 3F/F
+   625 ;;		On exit  : 3F/F
+   626 ;;		Unchanged: 3E/0
+   627 ;; Data sizes:     COMRAM   BANK0   BANK1
+   628 ;;      Params:         0       0       0
+   629 ;;      Locals:         0       0       0
+   630 ;;      Temps:          0       0       0
+   631 ;;      Totals:         0       0       0
+   632 ;;Total ram usage:        0 bytes
+   633 ;; Hardware stack levels used:    1
+   634 ;; Hardware stack levels required when called:    3
+   635 ;; This function calls:
+   636 ;;		Nothing
+   637 ;; This function is called by:
+   638 ;;		_SYSTEM_Initialize
+   639 ;; This function uses a non-reentrant model
+   640 ;;
+   641                           
+   642                           	psect	text6
+   643  000038                     __ptext6:
+   644                           	opt callstack 0
+   645  000038                     _EUSART1_Initialize:
+   646                           	opt callstack 26
+   647                           
+   648                           ; BSR set to: 15
+   649                           ;eusart1.c: 97: PIE1bits.RC1IE = 0;
+   650                           
+   651                           ;incstack = 0
+   652  000038  9A9D               	bcf	3997,5,c	;volatile
+   653                           
+   654                           ;eusart1.c: 99: PIE1bits.TX1IE = 0;
+   655  00003A  989D               	bcf	3997,4,c	;volatile
+   656                           
+   657                           ; BSR set to: 15
+   658                           ;eusart1.c: 104: BAUDCON1 = 0x08;
+   659  00003C  0E08               	movlw	8
+   660  00003E  6EB8               	movwf	4024,c	;volatile
+   661                           
+   662                           ;eusart1.c: 107: RCSTA1 = 0x90;
+   663  000040  0E90               	movlw	144
+   664  000042  6EAB               	movwf	4011,c	;volatile
+   665                           
+   666                           ;eusart1.c: 110: TXSTA1 = 0x24;
+   667  000044  0E24               	movlw	36
+   668  000046  6EAC               	movwf	4012,c	;volatile
+   669                           
+   670                           ;eusart1.c: 113: SPBRG1 = 0x19;
+   671  000048  0E19               	movlw	25
+   672  00004A  6EAF               	movwf	4015,c	;volatile
+   673                           
+   674                           ;eusart1.c: 116: SPBRGH1 = 0x00;
+   675  00004C  0E00               	movlw	0
+   676  00004E  6EB0               	movwf	4016,c	;volatile
+   677                           
+   678                           ;eusart1.c: 123: eusart1RxLastError.status = 0;
+   679  000050  0E00               	movlw	0
+   680  000052  6E47               	movwf	_eusart1RxLastError,c	;volatile
+   681                           
+   682                           ;eusart1.c: 126: eusart1TxHead = 0;
+   683  000054  0E00               	movlw	0
+   684  000056  6E4C               	movwf	_eusart1TxHead,c	;volatile
+   685                           
+   686                           ;eusart1.c: 127: eusart1TxTail = 0;
+   687  000058  0E00               	movlw	0
+   688  00005A  6E4B               	movwf	_eusart1TxTail,c	;volatile
+   689                           
+   690                           ;eusart1.c: 128: eusart1TxBufferRemaining = sizeof(eusart1TxBuffer);
+   691  00005C  0E08               	movlw	8
+   692  00005E  6E54               	movwf	_eusart1TxBufferRemaining,c	;volatile
+   693                           
+   694                           ;eusart1.c: 130: eusart1RxHead = 0;
+   695  000060  0E00               	movlw	0
+   696  000062  6E4A               	movwf	_eusart1RxHead,c	;volatile
+   697                           
+   698                           ;eusart1.c: 131: eusart1RxTail = 0;
+   699  000064  0E00               	movlw	0
+   700  000066  6E49               	movwf	_eusart1RxTail,c	;volatile
+   701                           
+   702                           ;eusart1.c: 132: eusart1RxCount = 0;
+   703  000068  0E00               	movlw	0
+   704  00006A  6E48               	movwf	_eusart1RxCount,c	;volatile
+   705                           
+   706                           ; BSR set to: 15
+   707                           ;eusart1.c: 135: PIE1bits.RC1IE = 1;
+   708  00006C  8A9D               	bsf	3997,5,c	;volatile
+   709                           
+   710                           ; BSR set to: 15
+   711  00006E  0012               	return		;funcret
+   712  000070                     __end_of_EUSART1_Initialize:
+   713                           	opt callstack 0
+   714                           
+   715 ;; *************** function _Rx_isEmpty *****************
+   716 ;; Defined at:
+   717 ;;		line 319 in file "mcc_generated_files/eusart1.c"
+   718 ;; Parameters:    Size  Location     Type
+   719 ;;		None
+   720 ;; Auto vars:     Size  Location     Type
+   721 ;;		None
+   722 ;; Return value:  Size  Location     Type
+   723 ;;                  1    wreg      unsigned char 
+   724 ;; Registers used:
+   725 ;;		wreg, status,2, status,0
+   726 ;; Tracked objects:
+   727 ;;		On entry : 0/0
+   728 ;;		On exit  : 0/0
+   729 ;;		Unchanged: 0/0
+   730 ;; Data sizes:     COMRAM   BANK0   BANK1
+   731 ;;      Params:         0       0       0
+   732 ;;      Locals:         0       0       0
+   733 ;;      Temps:          0       0       0
+   734 ;;      Totals:         0       0       0
+   735 ;;Total ram usage:        0 bytes
+   736 ;; Hardware stack levels used:    1
+   737 ;; Hardware stack levels required when called:    3
+   738 ;; This function calls:
+   739 ;;		Nothing
+   740 ;; This function is called by:
+   741 ;;		_main
+   742 ;; This function uses a non-reentrant model
+   743 ;;
+   744                           
+   745                           	psect	text7
+   746  0001A0                     __ptext7:
+   747                           	opt callstack 0
+   748  0001A0                     _Rx_isEmpty:
+   749                           	opt callstack 27
+   750                           
+   751                           ;eusart1.c: 321: return Rx_Head==Rx_Tail;
+   752                           
+   753                           ; BSR set to: 15
+   754                           ;incstack = 0
+   755  0001A0  5044               	movf	_Rx_Tail,w,c
+   756  0001A2  1846               	xorwf	_Rx_Head,w,c
+   757  0001A4  A4D8               	btfss	status,2,c
+   758  0001A6  D002               	goto	u80
+   759  0001A8  0E01               	movlw	1
+   760  0001AA  0012               	return	
+   761  0001AC                     u80:
+   762  0001AC  0E00               	movlw	0
+   763  0001AE  0012               	return		;funcret
+   764  0001B0                     __end_of_Rx_isEmpty:
+   765                           	opt callstack 0
+   766                           
+   767 ;; *************** function _EUSART1_Write_task *****************
+   768 ;; Defined at:
+   769 ;;		line 209 in file "mcc_generated_files/eusart1.c"
+   770 ;; Parameters:    Size  Location     Type
+   771 ;;		None
+   772 ;; Auto vars:     Size  Location     Type
+   773 ;;		None
+   774 ;; Return value:  Size  Location     Type
+   775 ;;                  1    wreg      void 
+   776 ;; Registers used:
+   777 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+   778 ;; Tracked objects:
+   779 ;;		On entry : 0/0
+   780 ;;		On exit  : 0/0
+   781 ;;		Unchanged: 0/0
+   782 ;; Data sizes:     COMRAM   BANK0   BANK1
+   783 ;;      Params:         0       0       0
+   784 ;;      Locals:         0       0       0
+   785 ;;      Temps:          0       0       0
+   786 ;;      Totals:         0       0       0
+   787 ;;Total ram usage:        0 bytes
+   788 ;; Hardware stack levels used:    1
+   789 ;; Hardware stack levels required when called:    4
+   790 ;; This function calls:
+   791 ;;		_Tx_deQ
+   792 ;;		_Tx_isEmpty
+   793 ;; This function is called by:
+   794 ;;		_main
+   795 ;; This function uses a non-reentrant model
+   796 ;;
+   797                           
+   798                           	psect	text8
+   799  00017C                     __ptext8:
+   800                           	opt callstack 0
+   801  00017C                     _EUSART1_Write_task:
+   802                           	opt callstack 26
+   803                           
+   804                           ;eusart1.c: 210: if(!Tx_isEmpty())
+   805                           
+   806                           ;incstack = 0
+   807  00017C  ECD8  F000         	call	_Tx_isEmpty	;wreg free
+   808  000180  0900               	iorlw	0
+   809  000182  A4D8               	btfss	status,2,c
+   810  000184  0012               	return	
+   811                           
+   812                           ;eusart1.c: 211: TXREG1 = Tx_deQ();
+   813  000186  EC80  F000         	call	_Tx_deQ	;wreg free
+   814  00018A  6EAD               	movwf	4013,c	;volatile
+   815  00018C  0012               	return		;funcret
+   816  00018E                     __end_of_EUSART1_Write_task:
+   817                           	opt callstack 0
+   818                           
+   819 ;; *************** function _Tx_isEmpty *****************
+   820 ;; Defined at:
+   821 ;;		line 338 in file "mcc_generated_files/eusart1.c"
+   822 ;; Parameters:    Size  Location     Type
+   823 ;;		None
+   824 ;; Auto vars:     Size  Location     Type
+   825 ;;		None
+   826 ;; Return value:  Size  Location     Type
+   827 ;;                  1    wreg      unsigned char 
+   828 ;; Registers used:
+   829 ;;		wreg, status,2, status,0
+   830 ;; Tracked objects:
+   831 ;;		On entry : 0/0
+   832 ;;		On exit  : 0/0
+   833 ;;		Unchanged: 0/0
+   834 ;; Data sizes:     COMRAM   BANK0   BANK1
+   835 ;;      Params:         0       0       0
+   836 ;;      Locals:         0       0       0
+   837 ;;      Temps:          0       0       0
+   838 ;;      Totals:         0       0       0
+   839 ;;Total ram usage:        0 bytes
+   840 ;; Hardware stack levels used:    1
+   841 ;; Hardware stack levels required when called:    3
+   842 ;; This function calls:
+   843 ;;		Nothing
+   844 ;; This function is called by:
+   845 ;;		_EUSART1_Write_task
+   846 ;; This function uses a non-reentrant model
+   847 ;;
+   848                           
+   849                           	psect	text9
+   850  0001B0                     __ptext9:
+   851                           	opt callstack 0
+   852  0001B0                     _Tx_isEmpty:
+   853                           	opt callstack 26
+   854                           
+   855                           ;eusart1.c: 340: return Tx_Head==Tx_Tail;
+   856                           
+   857                           ;incstack = 0
+   858  0001B0  5043               	movf	_Tx_Tail,w,c
+   859  0001B2  1845               	xorwf	_Tx_Head,w,c
+   860  0001B4  A4D8               	btfss	status,2,c
+   861  0001B6  D002               	goto	u10
+   862  0001B8  0E01               	movlw	1
+   863  0001BA  0012               	return	
+   864  0001BC                     u10:
+   865  0001BC  0E00               	movlw	0
+   866  0001BE  0012               	return		;funcret
+   867  0001C0                     __end_of_Tx_isEmpty:
+   868                           	opt callstack 0
+   869                           
+   870 ;; *************** function _Tx_deQ *****************
+   871 ;; Defined at:
+   872 ;;		line 342 in file "mcc_generated_files/eusart1.c"
+   873 ;; Parameters:    Size  Location     Type
+   874 ;;		None
+   875 ;; Auto vars:     Size  Location     Type
+   876 ;;  data            1    4[COMRAM] unsigned char 
+   877 ;; Return value:  Size  Location     Type
+   878 ;;                  1    wreg      unsigned char 
+   879 ;; Registers used:
+   880 ;;		wreg, fsr2l, fsr2h, status,2, status,0
+   881 ;; Tracked objects:
+   882 ;;		On entry : 0/0
+   883 ;;		On exit  : 0/0
+   884 ;;		Unchanged: 0/0
+   885 ;; Data sizes:     COMRAM   BANK0   BANK1
+   886 ;;      Params:         0       0       0
+   887 ;;      Locals:         1       0       0
+   888 ;;      Temps:          0       0       0
+   889 ;;      Totals:         1       0       0
+   890 ;;Total ram usage:        1 bytes
+   891 ;; Hardware stack levels used:    1
+   892 ;; Hardware stack levels required when called:    3
+   893 ;; This function calls:
+   894 ;;		Nothing
+   895 ;; This function is called by:
+   896 ;;		_EUSART1_Write_task
+   897 ;; This function uses a non-reentrant model
+   898 ;;
+   899                           
+   900                           	psect	text10
+   901  000100                     __ptext10:
+   902                           	opt callstack 0
+   903  000100                     _Tx_deQ:
+   904                           	opt callstack 26
+   905                           
+   906                           ;eusart1.c: 343: uint8_t data;;eusart1.c: 344: data = Tx_CQ[Tx_Tail++];
+   907                           
+   908                           ;incstack = 0
+   909  000100  5043               	movf	_Tx_Tail,w,c
+   910  000102  0F01               	addlw	low _Tx_CQ
+   911  000104  6ED9               	movwf	fsr2l,c
+   912  000106  6ADA               	clrf	fsr2h,c
+   913  000108  50DF               	movf	indf2,w,c
+   914  00010A  6E51               	movwf	Tx_deQ@data,c
+   915  00010C  2A43               	incf	_Tx_Tail,f,c
+   916                           
+   917                           ;eusart1.c: 345: Tx_Tail&=0x0F;
+   918  00010E  0E0F               	movlw	15
+   919  000110  1643               	andwf	_Tx_Tail,f,c
+   920                           
+   921                           ;eusart1.c: 346: return data;
+   922  000112  5051               	movf	Tx_deQ@data,w,c
+   923  000114  0012               	return		;funcret
+   924  000116                     __end_of_Tx_deQ:
+   925                           	opt callstack 0
+   926                           
+   927 ;; *************** function _EUSART1_Write *****************
+   928 ;; Defined at:
+   929 ;;		line 183 in file "mcc_generated_files/eusart1.c"
+   930 ;; Parameters:    Size  Location     Type
+   931 ;;  txData          1    wreg     unsigned char 
+   932 ;; Auto vars:     Size  Location     Type
+   933 ;;  txData          1    5[COMRAM] unsigned char 
+   934 ;; Return value:  Size  Location     Type
+   935 ;;                  1    wreg      void 
+   936 ;; Registers used:
+   937 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+   938 ;; Tracked objects:
+   939 ;;		On entry : 0/0
+   940 ;;		On exit  : 0/0
+   941 ;;		Unchanged: 0/0
+   942 ;; Data sizes:     COMRAM   BANK0   BANK1
+   943 ;;      Params:         0       0       0
+   944 ;;      Locals:         1       0       0
+   945 ;;      Temps:          0       0       0
+   946 ;;      Totals:         1       0       0
+   947 ;;Total ram usage:        1 bytes
+   948 ;; Hardware stack levels used:    1
+   949 ;; Hardware stack levels required when called:    4
+   950 ;; This function calls:
+   951 ;;		_Tx_enQ
+   952 ;; This function is called by:
+   953 ;;		_main
+   954 ;; This function uses a non-reentrant model
+   955 ;;
+   956                           
+   957                           	psect	text11
+   958  0001CE                     __ptext11:
+   959                           	opt callstack 0
+   960  0001CE                     _EUSART1_Write:
+   961                           	opt callstack 26
+   962                           
+   963                           ;incstack = 0
+   964                           ;EUSART1_Write@txData stored from wreg
+   965  0001CE  6E52               	movwf	EUSART1_Write@txData,c
+   966                           
+   967                           ;eusart1.c: 207: Tx_enQ(txData);
+   968  0001D0  5052               	movf	EUSART1_Write@txData,w,c
+   969  0001D2  EC8B  F000         	call	_Tx_enQ
+   970  0001D6  0012               	return		;funcret
+   971  0001D8                     __end_of_EUSART1_Write:
+   972                           	opt callstack 0
+   973                           
+   974 ;; *************** function _Tx_enQ *****************
+   975 ;; Defined at:
+   976 ;;		line 348 in file "mcc_generated_files/eusart1.c"
+   977 ;; Parameters:    Size  Location     Type
+   978 ;;  data            1    wreg     unsigned char 
+   979 ;; Auto vars:     Size  Location     Type
+   980 ;;  data            1    4[COMRAM] unsigned char 
+   981 ;; Return value:  Size  Location     Type
+   982 ;;                  1    wreg      void 
+   983 ;; Registers used:
+   984 ;;		wreg, fsr2l, fsr2h, status,2, status,0
+   985 ;; Tracked objects:
+   986 ;;		On entry : 0/0
+   987 ;;		On exit  : 0/0
+   988 ;;		Unchanged: 0/0
+   989 ;; Data sizes:     COMRAM   BANK0   BANK1
+   990 ;;      Params:         0       0       0
+   991 ;;      Locals:         1       0       0
+   992 ;;      Temps:          0       0       0
+   993 ;;      Totals:         1       0       0
+   994 ;;Total ram usage:        1 bytes
+   995 ;; Hardware stack levels used:    1
+   996 ;; Hardware stack levels required when called:    3
+   997 ;; This function calls:
+   998 ;;		Nothing
+   999 ;; This function is called by:
+  1000 ;;		_EUSART1_Write
+  1001 ;; This function uses a non-reentrant model
+  1002 ;;
+  1003                           
+  1004                           	psect	text12
+  1005  000116                     __ptext12:
+  1006                           	opt callstack 0
+  1007  000116                     _Tx_enQ:
+  1008                           	opt callstack 26
+  1009                           
+  1010                           ;incstack = 0
+  1011                           ;Tx_enQ@data stored from wreg
+  1012  000116  6E51               	movwf	Tx_enQ@data,c
+  1013                           
+  1014                           ;eusart1.c: 350: Tx_CQ[Tx_Head++] = data;
+  1015  000118  5045               	movf	_Tx_Head,w,c
+  1016  00011A  0F01               	addlw	low _Tx_CQ
+  1017  00011C  6ED9               	movwf	fsr2l,c
+  1018  00011E  6ADA               	clrf	fsr2h,c
+  1019  000120  C051  FFDF         	movff	Tx_enQ@data,indf2
+  1020  000124  2A45               	incf	_Tx_Head,f,c
+  1021                           
+  1022                           ;eusart1.c: 351: Tx_Head &= 0x0F;
+  1023  000126  0E0F               	movlw	15
+  1024  000128  1645               	andwf	_Tx_Head,f,c
+  1025  00012A  0012               	return		;funcret
+  1026  00012C                     __end_of_Tx_enQ:
+  1027                           	opt callstack 0
+  1028                           
+  1029 ;; *************** function _EUSART1_Read *****************
+  1030 ;; Defined at:
+  1031 ;;		line 157 in file "mcc_generated_files/eusart1.c"
+  1032 ;; Parameters:    Size  Location     Type
+  1033 ;;		None
+  1034 ;; Auto vars:     Size  Location     Type
+  1035 ;;		None
+  1036 ;; Return value:  Size  Location     Type
+  1037 ;;                  1    wreg      unsigned char 
+  1038 ;; Registers used:
+  1039 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+  1040 ;; Tracked objects:
+  1041 ;;		On entry : 0/0
+  1042 ;;		On exit  : 0/0
+  1043 ;;		Unchanged: 0/0
+  1044 ;; Data sizes:     COMRAM   BANK0   BANK1
+  1045 ;;      Params:         0       0       0
+  1046 ;;      Locals:         0       0       0
+  1047 ;;      Temps:          0       0       0
+  1048 ;;      Totals:         0       0       0
+  1049 ;;Total ram usage:        0 bytes
+  1050 ;; Hardware stack levels used:    1
+  1051 ;; Hardware stack levels required when called:    4
+  1052 ;; This function calls:
+  1053 ;;		_Rx_deQ
+  1054 ;; This function is called by:
+  1055 ;;		_main
+  1056 ;; This function uses a non-reentrant model
+  1057 ;;
+  1058                           
+  1059                           	psect	text13
+  1060  0001D8                     __ptext13:
+  1061                           	opt callstack 0
+  1062  0001D8                     _EUSART1_Read:
+  1063                           	opt callstack 26
+  1064                           
+  1065                           ;eusart1.c: 180: return Rx_deQ();
+  1066                           
+  1067                           ;incstack = 0
+  1068  0001D8  EC96  F000         	call	_Rx_deQ	;wreg free
+  1069  0001DC  0012               	return		;funcret
+  1070  0001DE                     __end_of_EUSART1_Read:
+  1071                           	opt callstack 0
+  1072                           
+  1073 ;; *************** function _Rx_deQ *****************
+  1074 ;; Defined at:
+  1075 ;;		line 323 in file "mcc_generated_files/eusart1.c"
+  1076 ;; Parameters:    Size  Location     Type
+  1077 ;;		None
+  1078 ;; Auto vars:     Size  Location     Type
+  1079 ;;  data            1    4[COMRAM] unsigned char 
+  1080 ;; Return value:  Size  Location     Type
+  1081 ;;                  1    wreg      unsigned char 
+  1082 ;; Registers used:
+  1083 ;;		wreg, fsr2l, fsr2h, status,2, status,0
+  1084 ;; Tracked objects:
+  1085 ;;		On entry : 0/0
+  1086 ;;		On exit  : 0/0
+  1087 ;;		Unchanged: 0/0
+  1088 ;; Data sizes:     COMRAM   BANK0   BANK1
+  1089 ;;      Params:         0       0       0
+  1090 ;;      Locals:         1       0       0
+  1091 ;;      Temps:          0       0       0
+  1092 ;;      Totals:         1       0       0
+  1093 ;;Total ram usage:        1 bytes
+  1094 ;; Hardware stack levels used:    1
+  1095 ;; Hardware stack levels required when called:    3
+  1096 ;; This function calls:
+  1097 ;;		Nothing
+  1098 ;; This function is called by:
+  1099 ;;		_EUSART1_Read
+  1100 ;; This function uses a non-reentrant model
+  1101 ;;
+  1102                           
+  1103                           	psect	text14
+  1104  00012C                     __ptext14:
+  1105                           	opt callstack 0
+  1106  00012C                     _Rx_deQ:
+  1107                           	opt callstack 26
+  1108                           
+  1109                           ;eusart1.c: 324: uint8_t data;;eusart1.c: 325: data = Rx_CQ[Rx_Tail++];
+  1110                           
+  1111                           ;incstack = 0
+  1112  00012C  5044               	movf	_Rx_Tail,w,c
+  1113  00012E  0F11               	addlw	low _Rx_CQ
+  1114  000130  6ED9               	movwf	fsr2l,c
+  1115  000132  6ADA               	clrf	fsr2h,c
+  1116  000134  50DF               	movf	indf2,w,c
+  1117  000136  6E51               	movwf	Rx_deQ@data,c
+  1118  000138  2A44               	incf	_Rx_Tail,f,c
+  1119                           
+  1120                           ;eusart1.c: 326: Rx_Tail&=0x0F;
+  1121  00013A  0E0F               	movlw	15
+  1122  00013C  1644               	andwf	_Rx_Tail,f,c
+  1123                           
+  1124                           ;eusart1.c: 327: return data;
+  1125  00013E  5051               	movf	Rx_deQ@data,w,c
+  1126  000140  0012               	return		;funcret
+  1127  000142                     __end_of_Rx_deQ:
+  1128                           	opt callstack 0
+  1129                           
+  1130 ;; *************** function _INTERRUPT_InterruptManager *****************
+  1131 ;; Defined at:
+  1132 ;;		line 58 in file "mcc_generated_files/interrupt_manager.c"
+  1133 ;; Parameters:    Size  Location     Type
+  1134 ;;		None
+  1135 ;; Auto vars:     Size  Location     Type
+  1136 ;;		None
+  1137 ;; Return value:  Size  Location     Type
+  1138 ;;                  1    wreg      void 
+  1139 ;; Registers used:
+  1140 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+  1141 ;; Tracked objects:
+  1142 ;;		On entry : 0/0
+  1143 ;;		On exit  : 0/0
+  1144 ;;		Unchanged: 0/0
+  1145 ;; Data sizes:     COMRAM   BANK0   BANK1
+  1146 ;;      Params:         0       0       0
+  1147 ;;      Locals:         0       0       0
+  1148 ;;      Temps:          2       0       0
+  1149 ;;      Totals:         2       0       0
+  1150 ;;Total ram usage:        2 bytes
+  1151 ;; Hardware stack levels used:    1
+  1152 ;; Hardware stack levels required when called:    2
+  1153 ;; This function calls:
+  1154 ;;		_EUSART1_Receive_ISR
+  1155 ;; This function is called by:
+  1156 ;;		Interrupt level 2
+  1157 ;; This function uses a non-reentrant model
+  1158 ;;
+  1159                           
+  1160                           	psect	intcode
+  1161  000008                     __pintcode:
+  1162                           	opt callstack 0
+  1163  000008                     _INTERRUPT_InterruptManager:
+  1164                           	opt callstack 26
+  1165                           
+  1166                           ;incstack = 0
+  1167  000008  8255               	bsf	btemp,1,c	;set compiler interrupt flag (level 2)
+  1168  00000A  CFD9 F04F          	movff	fsr2l,??_INTERRUPT_InterruptManager
+  1169  00000E  CFDA F050          	movff	fsr2h,??_INTERRUPT_InterruptManager+1
+  1170                           
+  1171                           ;interrupt_manager.c: 61: if(INTCONbits.PEIE == 1)
+  1172  000012  ACF2               	btfss	4082,6,c	;volatile
+  1173  000014  D009               	goto	i2l182
+  1174                           
+  1175                           ;interrupt_manager.c: 62: {;interrupt_manager.c: 63: if(PIE1bits.TX1IE == 1 && PIR1bits.
+      +                          TX1IF == 1)
+  1176  000016  A89D               	btfss	3997,4,c	;volatile
+  1177  000018  D002               	goto	i2l181
+  1178  00001A  B89E               	btfsc	3998,4,c	;volatile
+  1179  00001C  D005               	goto	i2l182
+  1180  00001E                     i2l181:
+  1181                           
+  1182                           ;interrupt_manager.c: 67: else if(PIE1bits.RC1IE == 1 && PIR1bits.RC1IF == 1)
+  1183  00001E  BA9D               	btfsc	3997,5,c	;volatile
+  1184  000020  AA9E               	btfss	3998,5,c	;volatile
+  1185  000022  D002               	goto	i2l182
+  1186                           
+  1187                           ;interrupt_manager.c: 68: {;interrupt_manager.c: 69: EUSART1_Receive_ISR();
+  1188  000024  EC64  F000         	call	_EUSART1_Receive_ISR	;wreg free
+  1189  000028                     i2l182:
+  1190                           
+  1191                           ;interrupt_manager.c: 74: };interrupt_manager.c: 75: }
+  1192  000028  C050  FFDA         	movff	??_INTERRUPT_InterruptManager+1,fsr2h
+  1193  00002C  C04F  FFD9         	movff	??_INTERRUPT_InterruptManager,fsr2l
+  1194  000030  9255               	bcf	btemp,1,c	;clear compiler interrupt flag (level 2)
+  1195  000032  0011               	retfie		f
+  1196  000034                     __end_of_INTERRUPT_InterruptManager:
+  1197                           	opt callstack 0
+  1198                           
+  1199 ;; *************** function _EUSART1_Receive_ISR *****************
+  1200 ;; Defined at:
+  1201 ;;		line 233 in file "mcc_generated_files/eusart1.c"
+  1202 ;; Parameters:    Size  Location     Type
+  1203 ;;		None
+  1204 ;; Auto vars:     Size  Location     Type
+  1205 ;;  c               1    1[COMRAM] unsigned char 
+  1206 ;; Return value:  Size  Location     Type
+  1207 ;;                  1    wreg      void 
+  1208 ;; Registers used:
+  1209 ;;		wreg, fsr2l, fsr2h, status,2, status,0, cstack
+  1210 ;; Tracked objects:
+  1211 ;;		On entry : 0/0
+  1212 ;;		On exit  : 0/0
+  1213 ;;		Unchanged: 0/0
+  1214 ;; Data sizes:     COMRAM   BANK0   BANK1
+  1215 ;;      Params:         0       0       0
+  1216 ;;      Locals:         1       0       0
+  1217 ;;      Temps:          0       0       0
+  1218 ;;      Totals:         1       0       0
+  1219 ;;Total ram usage:        1 bytes
+  1220 ;; Hardware stack levels used:    1
+  1221 ;; Hardware stack levels required when called:    1
+  1222 ;; This function calls:
+  1223 ;;		_Rx_enQ
+  1224 ;;		_Rx_isFull
+  1225 ;; This function is called by:
+  1226 ;;		_INTERRUPT_InterruptManager
+  1227 ;; This function uses a non-reentrant model
+  1228 ;;
+  1229                           
+  1230                           	psect	text16
+  1231  0000C8                     __ptext16:
+  1232                           	opt callstack 0
+  1233  0000C8                     _EUSART1_Receive_ISR:
+  1234                           	opt callstack 26
+  1235                           
+  1236                           ;eusart1.c: 255: if(1==RCSTA1bits.OERR){
+  1237                           
+  1238                           ;incstack = 0
+  1239  0000C8  A2AB               	btfss	4011,1,c	;volatile
+  1240  0000CA  D002               	goto	i2l108
+  1241                           
+  1242                           ;eusart1.c: 256: RCSTA1bits.CREN = 0;
+  1243  0000CC  98AB               	bcf	4011,4,c	;volatile
+  1244                           
+  1245                           ;eusart1.c: 257: RCSTA1bits.CREN = 1;
+  1246  0000CE  88AB               	bsf	4011,4,c	;volatile
+  1247  0000D0                     i2l108:
+  1248                           
+  1249                           ;eusart1.c: 258: };eusart1.c: 259: uint8_t c = RCREG1;
+  1250  0000D0  CFAE F04E          	movff	4014,EUSART1_Receive_ISR@c	;volatile
+  1251                           
+  1252                           ;eusart1.c: 260: if(!Rx_isFull()){
+  1253  0000D4  ECC7  F000         	call	_Rx_isFull	;wreg free
+  1254  0000D8  0900               	iorlw	0
+  1255  0000DA  A4D8               	btfss	status,2,c
+  1256  0000DC  0012               	return	
+  1257                           
+  1258                           ;eusart1.c: 261: Rx_enQ(c);
+  1259  0000DE  504E               	movf	EUSART1_Receive_ISR@c,w,c
+  1260  0000E0  ECA1  F000         	call	_Rx_enQ
+  1261  0000E4  0012               	return		;funcret
+  1262  0000E6                     __end_of_EUSART1_Receive_ISR:
+  1263                           	opt callstack 0
+  1264                           
+  1265 ;; *************** function _Rx_isFull *****************
+  1266 ;; Defined at:
+  1267 ;;		line 315 in file "mcc_generated_files/eusart1.c"
+  1268 ;; Parameters:    Size  Location     Type
+  1269 ;;		None
+  1270 ;; Auto vars:     Size  Location     Type
+  1271 ;;		None
+  1272 ;; Return value:  Size  Location     Type
+  1273 ;;                  1    wreg      unsigned char 
+  1274 ;; Registers used:
+  1275 ;;		wreg, status,2, status,0
+  1276 ;; Tracked objects:
+  1277 ;;		On entry : 0/0
+  1278 ;;		On exit  : 0/0
+  1279 ;;		Unchanged: 0/0
+  1280 ;; Data sizes:     COMRAM   BANK0   BANK1
+  1281 ;;      Params:         0       0       0
+  1282 ;;      Locals:         0       0       0
+  1283 ;;      Temps:          0       0       0
+  1284 ;;      Totals:         0       0       0
+  1285 ;;Total ram usage:        0 bytes
+  1286 ;; Hardware stack levels used:    1
+  1287 ;; This function calls:
+  1288 ;;		Nothing
+  1289 ;; This function is called by:
+  1290 ;;		_EUSART1_Receive_ISR
+  1291 ;; This function uses a non-reentrant model
+  1292 ;;
+  1293                           
+  1294                           	psect	text17
+  1295  00018E                     __ptext17:
+  1296                           	opt callstack 0
+  1297  00018E                     _Rx_isFull:
+  1298                           	opt callstack 26
+  1299                           
+  1300                           ;eusart1.c: 317: return ((Rx_Head+1)&0x0F)==Rx_Tail;
+  1301                           
+  1302                           ;incstack = 0
+  1303  00018E  2846               	incf	_Rx_Head,w,c
+  1304  000190  0B0F               	andlw	15
+  1305  000192  1844               	xorwf	_Rx_Tail,w,c
+  1306  000194  A4D8               	btfss	status,2,c
+  1307  000196  D002               	goto	i2u3_40
+  1308  000198  0E01               	movlw	1
+  1309  00019A  0012               	return	
+  1310  00019C                     i2u3_40:
+  1311  00019C  0E00               	movlw	0
+  1312  00019E  0012               	return		;funcret
+  1313  0001A0                     __end_of_Rx_isFull:
+  1314                           	opt callstack 0
+  1315                           
+  1316 ;; *************** function _Rx_enQ *****************
+  1317 ;; Defined at:
+  1318 ;;		line 329 in file "mcc_generated_files/eusart1.c"
+  1319 ;; Parameters:    Size  Location     Type
+  1320 ;;  data            1    wreg     unsigned char 
+  1321 ;; Auto vars:     Size  Location     Type
+  1322 ;;  data            1    0[COMRAM] unsigned char 
+  1323 ;; Return value:  Size  Location     Type
+  1324 ;;                  1    wreg      void 
+  1325 ;; Registers used:
+  1326 ;;		wreg, fsr2l, fsr2h, status,2, status,0
+  1327 ;; Tracked objects:
+  1328 ;;		On entry : 0/0
+  1329 ;;		On exit  : 0/0
+  1330 ;;		Unchanged: 0/0
+  1331 ;; Data sizes:     COMRAM   BANK0   BANK1
+  1332 ;;      Params:         0       0       0
+  1333 ;;      Locals:         1       0       0
+  1334 ;;      Temps:          0       0       0
+  1335 ;;      Totals:         1       0       0
+  1336 ;;Total ram usage:        1 bytes
+  1337 ;; Hardware stack levels used:    1
+  1338 ;; This function calls:
+  1339 ;;		Nothing
+  1340 ;; This function is called by:
+  1341 ;;		_EUSART1_Receive_ISR
+  1342 ;; This function uses a non-reentrant model
+  1343 ;;
+  1344                           
+  1345                           	psect	text18
+  1346  000142                     __ptext18:
+  1347                           	opt callstack 0
+  1348  000142                     _Rx_enQ:
+  1349                           	opt callstack 26
+  1350                           
+  1351                           ;incstack = 0
+  1352                           ;Rx_enQ@data stored from wreg
+  1353  000142  6E4D               	movwf	Rx_enQ@data,c
+  1354                           
+  1355                           ;eusart1.c: 331: Rx_CQ[Rx_Head++] = data;
+  1356  000144  5046               	movf	_Rx_Head,w,c
+  1357  000146  0F11               	addlw	low _Rx_CQ
+  1358  000148  6ED9               	movwf	fsr2l,c
+  1359  00014A  6ADA               	clrf	fsr2h,c
+  1360  00014C  C04D  FFDF         	movff	Rx_enQ@data,indf2
+  1361  000150  2A46               	incf	_Rx_Head,f,c
+  1362                           
+  1363                           ;eusart1.c: 332: Rx_Head &= 0x0F;
+  1364  000152  0E0F               	movlw	15
+  1365  000154  1646               	andwf	_Rx_Head,f,c
+  1366  000156  0012               	return		;funcret
+  1367  000158                     __end_of_Rx_enQ:
+  1368                           	opt callstack 0
+  1369  0000                     
+  1370                           	psect	rparam
+  1371  0000                     
+  1372                           	psect	temp
+  1373  000055                     btemp:
+  1374                           	opt callstack 0
+  1375  000055                     	ds	1
+  1376  0000                     int$flags	set	btemp
+  1377  0000                     wtemp8	set	btemp+1
+  1378  0000                     ttemp5	set	btemp+1
+  1379  0000                     ttemp6	set	btemp+4
+  1380  0000                     ttemp7	set	btemp+8
+  1381                           tosu	equ	0xFFF
+  1382                           tosh	equ	0xFFE
+  1383                           tosl	equ	0xFFD
+  1384                           stkptr	equ	0xFFC
+  1385                           pclatu	equ	0xFFB
+  1386                           pclath	equ	0xFFA
+  1387                           pcl	equ	0xFF9
+  1388                           tblptru	equ	0xFF8
+  1389                           tblptrh	equ	0xFF7
+  1390                           tblptrl	equ	0xFF6
+  1391                           tablat	equ	0xFF5
+  1392                           prodh	equ	0xFF4
+  1393                           prodl	equ	0xFF3
+  1394                           indf0	equ	0xFEF
+  1395                           postinc0	equ	0xFEE
+  1396                           postdec0	equ	0xFED
+  1397                           preinc0	equ	0xFEC
+  1398                           plusw0	equ	0xFEB
+  1399                           fsr0h	equ	0xFEA
+  1400                           fsr0l	equ	0xFE9
+  1401                           wreg	equ	0xFE8
+  1402                           indf1	equ	0xFE7
+  1403                           postinc1	equ	0xFE6
+  1404                           postdec1	equ	0xFE5
+  1405                           preinc1	equ	0xFE4
+  1406                           plusw1	equ	0xFE3
+  1407                           fsr1h	equ	0xFE2
+  1408                           fsr1l	equ	0xFE1
+  1409                           bsr	equ	0xFE0
+  1410                           indf2	equ	0xFDF
+  1411                           postinc2	equ	0xFDE
+  1412                           postdec2	equ	0xFDD
+  1413                           preinc2	equ	0xFDC
+  1414                           plusw2	equ	0xFDB
+  1415                           fsr2h	equ	0xFDA
+  1416                           fsr2l	equ	0xFD9
+  1417                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         76
+    Persistent  1
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           94      7      84
+    BANK0           160      0       0
+    BANK1           256      0       0
+
+Pointer List with Targets:
+
+    EUSART1_RxDefaultInterruptHandler	PTR FTN()void  size(2) Largest target is 1
+		 -> Absolute function(), 
+
+    EUSART1_TxDefaultInterruptHandler	PTR FTN()void  size(2) Largest target is 1
+		 -> Absolute function(), 
+
+    EUSART1_ErrorHandler	PTR FTN()void  size(2) Largest target is 1
+		 -> Absolute function(), 
+
+    EUSART1_OverrunErrorHandler	PTR FTN()void  size(2) Largest target is 1
+		 -> Absolute function(), 
+
+    EUSART1_FramingErrorHandler	PTR FTN()void  size(2) Largest target is 1
+		 -> Absolute function(), 
+
+
+Critical Paths under _main in COMRAM
+
+    _main->_EUSART1_Write
+    _EUSART1_Write_task->_Tx_deQ
+    _EUSART1_Write->_Tx_enQ
+    _EUSART1_Read->_Rx_deQ
+
+Critical Paths under _INTERRUPT_InterruptManager in COMRAM
+
+    _INTERRUPT_InterruptManager->_EUSART1_Receive_ISR
+    _EUSART1_Receive_ISR->_Rx_enQ
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _INTERRUPT_InterruptManager in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _INTERRUPT_InterruptManager in BANK1
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 1     1      0      75
+                                              6 COMRAM     1     1      0
+                       _EUSART1_Read
+                      _EUSART1_Write
+                 _EUSART1_Write_task
+                         _Rx_isEmpty
+                  _SYSTEM_Initialize
+                          _Tx_isFull
+ ---------------------------------------------------------------------------------
+ (1) _Tx_isFull                                            0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _SYSTEM_Initialize                                    0     0      0       0
+                 _EUSART1_Initialize
+               _INTERRUPT_Initialize
+              _OSCILLATOR_Initialize
+             _PIN_MANAGER_Initialize
+ ---------------------------------------------------------------------------------
+ (2) _PIN_MANAGER_Initialize                               0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _OSCILLATOR_Initialize                                0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _INTERRUPT_Initialize                                 0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _EUSART1_Initialize                                   0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _Rx_isEmpty                                           0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _EUSART1_Write_task                                   0     0      0      15
+                             _Tx_deQ
+                         _Tx_isEmpty
+ ---------------------------------------------------------------------------------
+ (2) _Tx_isEmpty                                           0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _Tx_deQ                                               1     1      0      15
+                                              4 COMRAM     1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _EUSART1_Write                                        1     1      0      30
+                                              5 COMRAM     1     1      0
+                             _Tx_enQ
+ ---------------------------------------------------------------------------------
+ (2) _Tx_enQ                                               1     1      0      15
+                                              4 COMRAM     1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _EUSART1_Read                                         0     0      0      15
+                             _Rx_deQ
+ ---------------------------------------------------------------------------------
+ (2) _Rx_deQ                                               1     1      0      15
+                                              4 COMRAM     1     1      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (3) _INTERRUPT_InterruptManager                           2     2      0      30
+                                              2 COMRAM     2     2      0
+                _EUSART1_Receive_ISR
+ ---------------------------------------------------------------------------------
+ (4) _EUSART1_Receive_ISR                                  1     1      0      30
+                                              1 COMRAM     1     1      0
+                             _Rx_enQ
+                          _Rx_isFull
+ ---------------------------------------------------------------------------------
+ (5) _Rx_isFull                                            0     0      0       0
+ ---------------------------------------------------------------------------------
+ (5) _Rx_enQ                                               1     1      0      15
+                                              0 COMRAM     1     1      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 5
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _EUSART1_Read
+     _Rx_deQ
+   _EUSART1_Write
+     _Tx_enQ
+   _EUSART1_Write_task
+     _Tx_deQ
+     _Tx_isEmpty
+   _Rx_isEmpty
+   _SYSTEM_Initialize
+     _EUSART1_Initialize
+     _INTERRUPT_Initialize
+     _OSCILLATOR_Initialize
+     _PIN_MANAGER_Initialize
+   _Tx_isFull
+
+ _INTERRUPT_InterruptManager (ROOT)
+   _EUSART1_Receive_ISR
+     _Rx_enQ
+     _Rx_isFull
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM             1FF      0       0       8        0.0%
+EEDATA             100      0       0       0        0.0%
+BITBANK1           100      0       0       7        0.0%
+BANK1              100      0       0       5        0.0%
+BITBANK0            A0      0       0       3        0.0%
+BANK0               A0      0       0       4        0.0%
+BITCOMRAM           5E      0       0       0        0.0%
+COMRAM              5E      7      54       1       89.4%
+BITSFR_1             0      0       0     200        0.0%
+SFR_1                0      0       0     200        0.0%
+BITSFR               0      0       0     200        0.0%
+SFR                  0      0       0     200        0.0%
+STACK                0      0       0       2        0.0%
+NULL                 0      0       0       0        0.0%
+ABS                  0      0      54       6        0.0%
+DATA                 0      0      54       9        0.0%
+CODE                 0      0       0       0        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V2.05 build -831301201 
+Symbol Table                                                                                   Tue Apr 14 15:56:36 2020
+
+           _eusart1TxBufferRemaining 0054                                   u10 01BC  
+                                 u80 01AC                         __CFG_CP0$OFF 000000  
+                       __CFG_CP1$OFF 000000                          __CFG_LVP$ON 000000  
+                                l256 0098                         __CFG_CPB$OFF 000000  
+                                u100 0166                         __CFG_CPD$OFF 000000  
+                                wreg 000FE8                                 l1117 0078  
+                               _LATA 000F89                                 _LATB 000F8A  
+                               _LATC 000F8B                                 _WPUB 000F61  
+                      _EUSART1_Write 01CE                                 _main 0070  
+                      ?_EUSART1_Read 004D                                 fsr2h 000FDA  
+                               indf2 000FDF                                 fsr2l 000FD9  
+                               btemp 0055                        __CFG_BORV$190 000000  
+                               start 0034                        __CFG_IESO$OFF 000000  
+                       ___param_bank 000000       __size_of_OSCILLATOR_Initialize 000E  
+      __end_of_OSCILLATOR_Initialize 01CE                _eusart1RxStatusBuffer 0021  
+                              ?_main 004D                       __CFG_DEBUG$OFF 000000  
+                              i2l108 00D0                                i2l181 001E  
+                              i2l182 0028                                _TRISA 000F92  
+                              _TRISB 000F93                                _TRISC 000F94  
+                      __CFG_WRT0$OFF 000000                        __CFG_WRT1$OFF 000000  
+                     __CFG_EBTR0$OFF 000000                       __CFG_FCMEN$OFF 000000  
+                     __CFG_EBTR1$OFF 000000                                _Rx_CQ 0011  
+                              _Tx_CQ 0001                        __CFG_WRTB$OFF 000000  
+                      __CFG_WRTC$OFF 000000                        __CFG_WRTD$OFF 000000  
+                     __CFG_EBTRB$OFF 000000                 EUSART1_Receive_ISR@c 004E  
+                 __CFG_MCLRE$EXTMCLR 000000                       ?_EUSART1_Write 004D  
+                     ??_EUSART1_Read 0052                                ttemp5 0056  
+                              ttemp6 0059                                ttemp7 005D  
+                              status 000FD8                                wtemp8 0056  
+                     __CFG_HFOFST$ON 000000                       __CFG_PBADEN$ON 000000  
+                    __initialization 00E6           __end_of_EUSART1_Initialize 0070  
+                       __end_of_main 009E          ?_INTERRUPT_InterruptManager 004D  
+                             ??_main 0053                        __activetblptr 000002  
+                             _ANSELA 000F38                               _ANSELB 000F39  
+                             _ANSELC 000F3A                       __CFG_WDTEN$OFF 000000  
+                             _RCREG1 000FAE                               _RCSTA1 000FAB  
+                             _OSCCON 000FD3                               _SPBRG1 000FAF  
+                             i2u3_40 019C                               _TXREG1 000FAD  
+                             _TXSTA1 000FAC                       __CFG_XINST$OFF 000000  
+                             _Rx_deQ 012C                               _Rx_enQ 0142  
+                             _Tx_deQ 0100                               _Tx_enQ 0116  
+                     __CFG_STVREN$ON 000000                           Rx_deQ@data 0051  
+                             clear_0 00EC                           Rx_enQ@data 004D  
+                         _Rx_isEmpty 01A0                               tblptru 000FF8  
+                 __size_of_Rx_isFull 0012                      ??_EUSART1_Write 0052  
+                    _eusart1RxBuffer 0029                   __size_of_Tx_isFull 0012  
+                         Tx_deQ@data 0051        __size_of_INTERRUPT_Initialize 0004  
+                    _eusart1TxBuffer 0031                           _Tx_isEmpty 01B0  
+                  _SYSTEM_Initialize 016A                           __accesstop 0060  
+            __end_of__initialization 00F2                           Tx_enQ@data 0051  
+                 ?_SYSTEM_Initialize 004D                        ___rparam_used 000001  
+                     __pcstackCOMRAM 004D           __end_of_EUSART1_Write_task 018E  
+                ??_SYSTEM_Initialize 0051                 __end_of_EUSART1_Read 01DE  
+        __end_of_EUSART1_Receive_ISR 00E6            __end_of_SYSTEM_Initialize 017C  
+                      _eusart1RxHead 004A                        _eusart1TxHead 004C  
+                      _eusart1RxTail 0049                        _eusart1TxTail 004B  
+  _EUSART1_TxDefaultInterruptHandler 0041                      __CFG_PLLCFG$OFF 000000  
+                         __pnvCOMRAM 0054                   __CFG_CCP2MX$PORTC1 000000  
+                            ?_Rx_deQ 004D                              ?_Rx_enQ 004D  
+                            ?_Tx_deQ 004D                              ?_Tx_enQ 004D  
+                  __end_of_Rx_isFull 01A0                   __CFG_CCP3MX$PORTB5 000000  
+                  __end_of_Tx_isFull 016A                          ?_Rx_isEmpty 004D  
+                            _OSCCON2 000FD2                              _OSCTUNE 000F9B  
+                            _SPBRGH1 000FB0                          ?_Tx_isEmpty 004D  
+                    __CFG_PWRTEN$OFF 000000                              __Hparam 0000  
+                            __Lparam 0000                              _Rx_Head 0046  
+                            _Rx_Tail 0044                              _Tx_Head 0045  
+                            _Tx_Tail 0043                      __size_of_Rx_deQ 0016  
+                    __size_of_Rx_enQ 0016                      __size_of_Tx_deQ 0016  
+                    __size_of_Tx_enQ 0016                              __pcinit 00E6  
+                            __ramtop 0200                              __ptext0 0070  
+                            __ptext1 0158                              __ptext2 016A  
+                            __ptext3 009E                              __ptext4 01C0  
+                            __ptext5 01DE                              __ptext6 0038  
+                            __ptext7 01A0                              __ptext8 017C  
+                            __ptext9 01B0                _OSCILLATOR_Initialize 01C0  
+                 _EUSART1_Initialize 0038             ??_PIN_MANAGER_Initialize 0051  
+         __size_of_SYSTEM_Initialize 0012                 end_of_initialization 00F2  
+                ?_EUSART1_Initialize 004D                        __Lmediumconst 0000  
+        _EUSART1_OverrunErrorHandler 003B                  __size_of_Rx_isEmpty 0010  
+                            postinc0 000FEE                __size_of_EUSART1_Read 0006  
+               ??_EUSART1_Initialize 0051                  __size_of_Tx_isEmpty 0010  
+                EUSART1_Write@txData 0052                         _EUSART1_Read 01D8  
+       __end_of_INTERRUPT_Initialize 01E2                       __end_of_Rx_deQ 0142  
+                     __end_of_Rx_enQ 0158                       __end_of_Tx_deQ 0116  
+                     __end_of_Tx_enQ 012C               ?_OSCILLATOR_Initialize 004D  
+                start_initialization 00E6                   _EUSART1_Write_task 017C  
+    __size_of_PIN_MANAGER_Initialize 002A                __end_of_EUSART1_Write 01D8  
+                ?_EUSART1_Write_task 004D                             ??_Rx_deQ 0051  
+                           ??_Rx_enQ 004D                             ??_Tx_deQ 0051  
+                           ??_Tx_enQ 0051                 ??_EUSART1_Write_task 0052  
+                          _Rx_isFull 018E                       _eusart1RxCount 0048  
+                          _Tx_isFull 0158                          __pbssCOMRAM 0001  
+                       ??_Rx_isEmpty 0051    _EUSART1_RxDefaultInterruptHandler 003F  
+                       ??_Tx_isEmpty 0051         __size_of_EUSART1_Receive_ISR 001E  
+             _PIN_MANAGER_Initialize 009E                            __pintcode 0008  
+                 __end_of_Rx_isEmpty 01B0                           ?_Rx_isFull 004D  
+       ??_INTERRUPT_InterruptManager 004F                     __CFG_PRICLKEN$ON 000000  
+                 __end_of_Tx_isEmpty 01C0                           ?_Tx_isFull 004D  
+                           _BAUDCON1 000FB8                 _EUSART1_ErrorHandler 0039  
+               _INTERRUPT_Initialize 01DE                             _PIE1bits 000F9D  
+__size_of_INTERRUPT_InterruptManager 002C                             _PIR1bits 000F9E  
+                           _RCONbits 000FD0                     __CFG_WDTPS$32768 000000  
+                        _INTCON2bits 000FF1                ?_INTERRUPT_Initialize 004D  
+                           __Hrparam 0000                             __Lrparam 0000  
+                 __CFG_BOREN$SBORDIS 000000                    __CFG_P2BMX$PORTB5 000000  
+            ??_OSCILLATOR_Initialize 0051          __size_of_EUSART1_Initialize 0038  
+                        ??_Rx_isFull 004D                          ??_Tx_isFull 0051  
+                           __ptext10 0100                             __ptext11 01CE  
+                           __ptext12 0116                             __ptext13 01D8  
+                           __ptext14 012C                             __ptext16 00C8  
+                           __ptext17 018E                             __ptext18 0142  
+                      __size_of_main 002E                             int$flags 0055  
+ __end_of_INTERRUPT_InterruptManager 0034           _INTERRUPT_InterruptManager 0008  
+                           main@data 0053          _EUSART1_FramingErrorHandler 003D  
+                _EUSART1_Receive_ISR 00C8                           _INTCONbits 000FF2  
+             ??_INTERRUPT_Initialize 0051                             intlevel2 0000  
+               ?_EUSART1_Receive_ISR 004D              ?_PIN_MANAGER_Initialize 004D  
+                         _RCSTA1bits 000FAB          __size_of_EUSART1_Write_task 0012  
+             __size_of_EUSART1_Write 000A                   _eusart1RxLastError 0047  
+                  __CFG_T3CMX$PORTC0 000000                ??_EUSART1_Receive_ISR 004E  
+     __end_of_PIN_MANAGER_Initialize 00C8                    __CFG_FOSC$INTIO67 000000  

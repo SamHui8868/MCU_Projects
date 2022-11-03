@@ -1,0 +1,342 @@
+[p GLOBOPT AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F23K22 ]
+[d frameptr 4065 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"19 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"11 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\Umul64.c
+[v ___omul __omul `(ul  1 e 4 0 ]
+"53 C:\Users\user\MPLABXProjects\LAB3new.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"13 C:\Users\user\MPLABXProjects\LAB3new.X\mcc_generated_files/CD4021.c
+[v _CD4021Driver CD4021Driver `(v  1 e 1 0 ]
+"21 C:\Users\user\MPLABXProjects\LAB3new.X\mcc_generated_files/CD4094.c
+[v _CD4094Driver CD4094Driver `(v  1 e 1 0 ]
+"51
+[v _CD4094WriteH CD4094WriteH `(v  1 e 1 0 ]
+"52 C:\Users\user\MPLABXProjects\LAB3new.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+"58
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
+"50 C:\Users\user\MPLABXProjects\LAB3new.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"59
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"55 C:\Users\user\MPLABXProjects\LAB3new.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"67 C:\Users\user\MPLABXProjects\LAB3new.X\mcc_generated_files/tmr0.c
+[v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
+"129
+[v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
+"147
+[v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
+"151
+[v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
+"52 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f23k22.h
+[v _ANSELA ANSELA `VEuc  1 e 1 @3896 ]
+"97
+[v _ANSELB ANSELB `VEuc  1 e 1 @3897 ]
+"147
+[v _ANSELC ANSELC `VEuc  1 e 1 @3898 ]
+"2613
+[v _WPUB WPUB `VEuc  1 e 1 @3937 ]
+[s S401 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+"6260
+[s S410 . 1 `uc 1 AN0 1 0 :1:0 
+`uc 1 AN1 1 0 :1:1 
+`uc 1 AN2 1 0 :1:2 
+`uc 1 AN3 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 AN4 1 0 :1:5 
+]
+[s S417 . 1 `uc 1 C12IN0M 1 0 :1:0 
+`uc 1 C12IN1M 1 0 :1:1 
+`uc 1 C2INP 1 0 :1:2 
+`uc 1 C1INP 1 0 :1:3 
+`uc 1 C1OUT 1 0 :1:4 
+`uc 1 C2OUT 1 0 :1:5 
+]
+[s S424 . 1 `uc 1 C12IN0N 1 0 :1:0 
+`uc 1 C12IN1N 1 0 :1:1 
+`uc 1 VREFM 1 0 :1:2 
+`uc 1 VREFP 1 0 :1:3 
+`uc 1 T0CKI 1 0 :1:4 
+`uc 1 SS 1 0 :1:5 
+]
+[s S431 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_SS 1 0 :1:5 
+]
+[s S434 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 VREFN 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 SRQ 1 0 :1:4 
+`uc 1 nSS 1 0 :1:5 
+]
+[s S440 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 CVREF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 CCP5 1 0 :1:4 
+`uc 1 LVDIN 1 0 :1:5 
+]
+[s S446 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 DACOUT 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 HLVDIN 1 0 :1:5 
+]
+[s S451 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SS1 1 0 :1:5 
+]
+[s S454 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_SS1 1 0 :1:5 
+]
+[s S457 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 nSS1 1 0 :1:5 
+]
+[s S460 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SRNQ 1 0 :1:5 
+]
+[s S463 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+`uc 1 . 1 0 :6:1 
+`uc 1 RJPU 1 0 :1:7 
+]
+[u S467 . 1 `S401 1 . 1 0 `S410 1 . 1 0 `S417 1 . 1 0 `S424 1 . 1 0 `S431 1 . 1 0 `S434 1 . 1 0 `S440 1 . 1 0 `S446 1 . 1 0 `S451 1 . 1 0 `S454 1 . 1 0 `S457 1 . 1 0 `S460 1 . 1 0 `S463 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES467  1 e 1 @3968 ]
+"7244
+[v _LATA LATA `VEuc  1 e 1 @3977 ]
+[s S357 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 LATA3 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 LATA5 1 0 :1:5 
+`uc 1 LATA6 1 0 :1:6 
+`uc 1 LATA7 1 0 :1:7 
+]
+"7271
+[s S366 . 1 `uc 1 LA0 1 0 :1:0 
+`uc 1 LA1 1 0 :1:1 
+`uc 1 LA2 1 0 :1:2 
+`uc 1 LA3 1 0 :1:3 
+`uc 1 LA4 1 0 :1:4 
+`uc 1 LA5 1 0 :1:5 
+`uc 1 LA6 1 0 :1:6 
+`uc 1 LA7 1 0 :1:7 
+]
+[u S375 . 1 `S357 1 . 1 0 `S366 1 . 1 0 ]
+[v _LATAbits LATAbits `VES375  1 e 1 @3977 ]
+"7356
+[v _LATB LATB `VEuc  1 e 1 @3978 ]
+"7468
+[v _LATC LATC `VEuc  1 e 1 @3979 ]
+"7580
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"7802
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"8024
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+"8267
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3995 ]
+[s S148 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+]
+"15040
+[s S150 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_POR 1 0 :1:1 
+]
+[s S153 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_PD 1 0 :1:2 
+]
+[s S156 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 NOT_TO 1 0 :1:3 
+]
+[s S159 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 NOT_RI 1 0 :1:4 
+]
+[s S162 . 1 `uc 1 nBOR 1 0 :1:0 
+`uc 1 nPOR 1 0 :1:1 
+`uc 1 nPD 1 0 :1:2 
+`uc 1 nTO 1 0 :1:3 
+`uc 1 nRI 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 SBOREN 1 0 :1:6 
+`uc 1 IPEN 1 0 :1:7 
+]
+[s S171 . 1 `uc 1 BOR 1 0 :1:0 
+`uc 1 POR 1 0 :1:1 
+`uc 1 PD 1 0 :1:2 
+`uc 1 TO 1 0 :1:3 
+`uc 1 RI 1 0 :1:4 
+]
+[u S177 . 1 `S148 1 . 1 0 `S150 1 . 1 0 `S153 1 . 1 0 `S156 1 . 1 0 `S159 1 . 1 0 `S162 1 . 1 0 `S171 1 . 1 0 ]
+[v _RCONbits RCONbits `VES177  1 e 1 @4048 ]
+"15158
+[v _OSCCON2 OSCCON2 `VEuc  1 e 1 @4050 ]
+"15215
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
+"15298
+[v _T0CON T0CON `VEuc  1 e 1 @4053 ]
+"15375
+[v _TMR0L TMR0L `VEuc  1 e 1 @4054 ]
+"15395
+[v _TMR0H TMR0H `VEuc  1 e 1 @4055 ]
+[s S285 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 NOT_RBPU 1 0 :1:7 
+]
+"16050
+[s S288 . 1 `uc 1 RBIP 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 TMR0IP 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INTEDG2 1 0 :1:4 
+`uc 1 INTEDG1 1 0 :1:5 
+`uc 1 INTEDG0 1 0 :1:6 
+`uc 1 nRBPU 1 0 :1:7 
+]
+[s S297 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 RBPU 1 0 :1:7 
+]
+[u S300 . 1 `S285 1 . 1 0 `S288 1 . 1 0 `S297 1 . 1 0 ]
+[v _INTCON2bits INTCON2bits `VES300  1 e 1 @4081 ]
+[s S27 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INT0IF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INT0IE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE_GIEL 1 0 :1:6 
+`uc 1 GIE_GIEH 1 0 :1:7 
+]
+"16127
+[s S36 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 INT0F 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INT0E 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+[s S45 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+[u S49 . 1 `S27 1 . 1 0 `S36 1 . 1 0 `S45 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES49  1 e 1 @4082 ]
+"48 C:\Users\user\MPLABXProjects\LAB3new.X\main.c
+[v _timeCounter timeCounter `ul  1 e 4 0 ]
+"12 C:\Users\user\MPLABXProjects\LAB3new.X\mcc_generated_files/CD4021.c
+[v _CD4021Buffer CD4021Buffer `uc  1 s 1 CD4021Buffer ]
+[s S569 . 2 `uc 1 BufferH 1 0 `uc 1 BufferL 1 1 ]
+"19 C:\Users\user\MPLABXProjects\LAB3new.X\mcc_generated_files/CD4094.c
+[u S572 Buffer16 2 `S569 1 . 2 0 `ui 1 Buffer 2 0 ]
+[v _CD4094Buffer CD4094Buffer `S572  1 s 2 CD4094Buffer ]
+"20
+[v _temp temp `ui  1 e 2 0 ]
+"58 C:\Users\user\MPLABXProjects\LAB3new.X\mcc_generated_files/tmr0.c
+[v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
+"60
+[v _timer0ReloadVal timer0ReloadVal `VEuc  1 e 1 0 ]
+"53 C:\Users\user\MPLABXProjects\LAB3new.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"73
+[v main@CD4021DriveTimeCounter CD4021DriveTimeCounter `ul  1 a 4 19 ]
+[v main@CD4094DriveTimeCounter CD4094DriveTimeCounter `ul  1 a 4 15 ]
+"93
+} 0
+"50 C:\Users\user\MPLABXProjects\LAB3new.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"57
+} 0
+"67 C:\Users\user\MPLABXProjects\LAB3new.X\mcc_generated_files/tmr0.c
+[v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
+{
+"92
+} 0
+"147
+[v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 2 ]
+"149
+} 0
+"55 C:\Users\user\MPLABXProjects\LAB3new.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"91
+} 0
+"59 C:\Users\user\MPLABXProjects\LAB3new.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"67
+} 0
+"52 C:\Users\user\MPLABXProjects\LAB3new.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+{
+"56
+} 0
+"51 C:\Users\user\MPLABXProjects\LAB3new.X\mcc_generated_files/CD4094.c
+[v _CD4094WriteH CD4094WriteH `(v  1 e 1 0 ]
+{
+[v CD4094WriteH@BufferH BufferH `uc  1 a 1 wreg ]
+[v CD4094WriteH@BufferH BufferH `uc  1 a 1 wreg ]
+[v CD4094WriteH@BufferH BufferH `uc  1 a 1 2 ]
+"54
+} 0
+"21
+[v _CD4094Driver CD4094Driver `(v  1 e 1 0 ]
+{
+"26
+[v CD4094Driver@i i `i  1 a 2 3 ]
+"46
+} 0
+"13 C:\Users\user\MPLABXProjects\LAB3new.X\mcc_generated_files/CD4021.c
+[v _CD4021Driver CD4021Driver `(v  1 e 1 0 ]
+{
+"24
+[v CD4021Driver@i i `i  1 a 2 5 ]
+"15
+[v CD4021Driver@temp temp `i  1 a 2 3 ]
+"37
+} 0
+"58 C:\Users\user\MPLABXProjects\LAB3new.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
+{
+"69
+} 0
+"129 C:\Users\user\MPLABXProjects\LAB3new.X\mcc_generated_files/tmr0.c
+[v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
+{
+"144
+} 0
+"151
+[v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"155
+} 0

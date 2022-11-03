@@ -1,0 +1,66 @@
+Dependencies for Project 'IOcontrol', Target 'Target 1': (DO NOT MODIFY !)
+F (.\main.c)(0x5E65EFC2)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ".\Header files"-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Nuvoton\NuMicro_DFP\1.3.7\Device\M451\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524"-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (.\Header files\M451Series.h)(0x55C9B310)
+I (.\Header files\core_cm4.h)(0x549D1C04)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9AD218)
+I (.\Header files\core_cmInstr.h)(0x549D1C04)
+I (.\Header files\core_cmFunc.h)(0x549D1C04)
+I (.\Header files\core_cm4_simd.h)(0x549D1C04)
+I (.\Header files\system_M451Series.h)(0x549D1C10)
+I (.\Header files\sys.h)(0x549D1C12)
+I (.\Header files\clk.h)(0x549D1C12)
+I (.\Header files\gpio.h)(0x55C9F368)
+I (.\Header files\i2c.h)(0x549D1C12)
+I (.\Header files\crc.h)(0x549D1C12)
+I (.\Header files\ebi.h)(0x549D1C12)
+I (.\Header files\rtc.h)(0x549D1C12)
+I (.\Header files\timer.h)(0x549D1C12)
+I (.\Header files\wdt.h)(0x549D1C12)
+I (.\Header files\wwdt.h)(0x549D1C12)
+I (.\Header files\spi.h)(0x549D1C12)
+I (.\Header files\sc.h)(0x549D1C12)
+I (.\Header files\scuart.h)(0x549D1C12)
+I (.\Header files\acmp.h)(0x549D1C12)
+I (.\Header files\eadc.h)(0x549D1C12)
+I (.\Header files\dac.h)(0x55C8795A)
+I (.\Header files\can.h)(0x549D1C12)
+I (.\Header files\usbd.h)(0x549D1C12)
+I (.\Header files\fmc.h)(0x549D1C12)
+I (.\Header files\uart.h)(0x549D1C12)
+I (.\Header files\pwm.h)(0x549D1C12)
+I (.\Header files\pdma.h)(0x549D1C12)
+I (.\Header files\tk.h)(0x549D1C12)
+I (.\Header files\otg.h)(0x549D1C12)
+F (.\startup_M451Series.s)(0x55C35A28)(--cpu Cortex-M4.fp --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Nuvoton\NuMicro_DFP\1.3.7\Device\M451\Include-IC:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 524"--list .\listings\startup_m451series.lst --xref -o .\objects\startup_m451series.o --depend .\objects\startup_m451series.d)
+F (.\system_M451Series.c)(0x549D1C10)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I ".\Header files"-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Nuvoton\NuMicro_DFP\1.3.7\Device\M451\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524"-o .\objects\system_m451series.o --omf_browse .\objects\system_m451series.crf --depend .\objects\system_m451series.d)
+I (.\Header files\M451Series.h)(0x55C9B310)
+I (.\Header files\core_cm4.h)(0x549D1C04)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9AD218)
+I (.\Header files\core_cmInstr.h)(0x549D1C04)
+I (.\Header files\core_cmFunc.h)(0x549D1C04)
+I (.\Header files\core_cm4_simd.h)(0x549D1C04)
+I (.\Header files\system_M451Series.h)(0x549D1C10)
+I (.\Header files\sys.h)(0x549D1C12)
+I (.\Header files\clk.h)(0x549D1C12)
+I (.\Header files\gpio.h)(0x55C9F368)
+I (.\Header files\i2c.h)(0x549D1C12)
+I (.\Header files\crc.h)(0x549D1C12)
+I (.\Header files\ebi.h)(0x549D1C12)
+I (.\Header files\rtc.h)(0x549D1C12)
+I (.\Header files\timer.h)(0x549D1C12)
+I (.\Header files\wdt.h)(0x549D1C12)
+I (.\Header files\wwdt.h)(0x549D1C12)
+I (.\Header files\spi.h)(0x549D1C12)
+I (.\Header files\sc.h)(0x549D1C12)
+I (.\Header files\scuart.h)(0x549D1C12)
+I (.\Header files\acmp.h)(0x549D1C12)
+I (.\Header files\eadc.h)(0x549D1C12)
+I (.\Header files\dac.h)(0x55C8795A)
+I (.\Header files\can.h)(0x549D1C12)
+I (.\Header files\usbd.h)(0x549D1C12)
+I (.\Header files\fmc.h)(0x549D1C12)
+I (.\Header files\uart.h)(0x549D1C12)
+I (.\Header files\pwm.h)(0x549D1C12)
+I (.\Header files\pdma.h)(0x549D1C12)
+I (.\Header files\tk.h)(0x549D1C12)
+I (.\Header files\otg.h)(0x549D1C12)
